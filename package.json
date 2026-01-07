@@ -1,0 +1,27 @@
+{
+  "name": "projet_mern",
+  "version": "1.0.0",
+  "description": "Application web complète de plateforme de cours en ligne développée avec le stack MERN (MongoDB, Express.js, React, Node.js).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaima-massaoudi/E-Learning-Platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chaima-massaoudi/E-Learning-Platform/issues"
+  },
+  "homepage": "https://github.com/chaima-massaoudi/E-Learning-Platform#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
