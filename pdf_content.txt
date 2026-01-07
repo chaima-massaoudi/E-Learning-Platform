@@ -1,0 +1,4003 @@
+
+================================================================================
+FILE: exam.pdf
+================================================================================
+
+--- Page 1 ---
+Cahier des Charges
+Projet Final - Stack MERN
+Examen Pratique
+Abdelweheb GUEDDES & Mohamed Ben Jazia
+Ecole Polytechnique Sousse
+AnnΘe Universitaire 2025-2026
+INFORMATIONS
+IMPORTANTES
+ù Date limite de soumission : La veille de votre soutenance α 23h59
+ù Format de livraison : Code source + Mini rapport PDF
+ù Soutenance obligatoire : Questions techniques pour validation de la
+note
+ù ThΦme libre : Non imposΘ, laissez parler votre crΘativitΘ!
+
+--- Page 2 ---
+Cahier des Charges - Projet MERN
+Table des matiΦres
+1 Objectif du Projet 3
+2 SpΘcifications Techniques 3
+2.1 Choix du ThΦme . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Architecture Backend (Node.js + Express + MongoDB) . . . . . . . . . . . 3
+2.2.1 Exigences Minimales . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2.2 API REST . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2.3 SΘcuritΘ et Middleware . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2.4 FonctionnalitΘs AvancΘes . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 Livrables Attendus 5
+3.1 Code Source . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.2 Validation de la Note . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4 ModalitΘs Pratiques 6
+4.1 Date et Heure de Soumission . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2
+
+--- Page 3 ---
+Cahier des Charges - Projet MERN
+1 Objectif du Projet
+DΘvelopper une application web complΦte utilisant le stack MERN (MongoDB, Ex-
+press.js, React, Node.js) en appliquant lÆensemble des concepts et technologies ΘtudiΘs
+durant le semestre.
+Ce projet final a pour but de :
+ù DΘmontrer votre maεtrise du dΘveloppement full-stack moderne
+ù Mettre en pratique les architectures REST API et SPA
+ù Appliquer les bonnes pratiques de sΘcuritΘ et de structuration
+ù IntΘgrer des fonctionnalitΘs avancΘes (authentification, IA, etc.)
+ù Produire un code propre, maintenable et documentΘ
+2 SpΘcifications Techniques
+2.1 Choix du ThΦme
+Le thΦme de votre application est entiΦrement libre. Quelques suggestions :
+ù E-Commerce : Boutique en ligne, marketplace
+ù RΘseau Social : Mini rΘseau, forum, blog collaboratif
+ù Gestion : CRM, gestion de projet, systΦme de rΘservation
+ù ╔ducation : Plateforme de cours, quiz en ligne
+ù SantΘ : Suivi mΘdical, gestion de rendez-vous
+ù Finance : Gestion de budget, tracker de dΘpenses
+ù Divertissement : Application de streaming, bibliothΦque
+ù Autre : Toute idΘe originale validΘe par vos enseignants
+Conseil : Choisissez un thΦme qui vous passionne! Cela facilitera votre motivation
+et la qualitΘ de votre travail.
+2.2 Architecture Backend (Node.js + Express + MongoDB)
+2.2.1 Exigences Minimales
+1. ModΦle de DonnΘes : 5 EntitΘs Minimum
+Votre base de donnΘes doit contenir au minimum 5 entitΘs (modΦles Mon-
+goose) avec des relations variΘes.
+Types de relations obligatoires :
+ù Relation 1-to-1 (Un α Un) : Au moins 1 exemple
+ù Relation 1-to-Many (Un α Plusieurs) : Au moins 2 exemples
+ù Relation Many-to-Many (Plusieurs α Plusieurs) : Au moins 1 exemple
+Exemple de ModΘlisation (E-Commerce) :
+3
+
+--- Page 4 ---
+Cahier des Charges - Projet MERN
+EntitΘ Relations
+User 1-to-1 avec Profile
+1-to-Many avec Order
+Many-to-Many avec Product (via Wishlist)
+Profile 1-to-1 avec User
+Product 1-to-Many avec Review
+Many-to-Many avec Category
+Many-to-Many avec User (Wishlist)
+Order 1-to-Many avec OrderItem
+Appartient α 1 User
+Category Many-to-Many avec Product
+Astuce : Documentez vos relations avec un schΘma de base de donnΘes (diagramme
+ER) dans votre rapport.
+2.2.2 API REST
+2. Routes et Contr⌠leurs
+Pour chaque entitΘ, implΘmentez les opΘrations CRUD de base :
+ù CREATE : POST pour crΘer une ressource
+ù READ : GET pour rΘcupΘrer (liste et dΘtails)
+ù UPDATE : PUT/PATCH pour modifier
+ù DELETE : DELETE pour supprimer
+Routes supplΘmentaires attendues :
+ù Routes dÆauthentification (Register, Login, Logout)
+ù Routes protΘgΘes avec middleware JWT
+2.2.3 SΘcuritΘ et Middleware
+3. SΘcuritΘ Obligatoire
+ù Authentification JWT : SystΦme complet (register, login, token refresh)
+ù Hashage des mots de passe : bcrypt.js
+ù Variables dÆenvironnement : Fichier .env pour secrets
+ù Validation des donnΘes : express-validator ou Joi
+ù Protection CORS : Configuration appropriΘe
+2.2.4 FonctionnalitΘs AvancΘes
+4. IntΘgration IA (Optionnel mais fortement recommandΘ - Bonus)
+IntΘgrez au moins une fonctionnalitΘ IA avec Gemini API :
+ù GΘnΘration automatique de contenu
+ù Analyse de sentiments
+ù Recommandations personnalisΘes
+ù Chatbot dÆassistance
+4
+
+--- Page 5 ---
+Cahier des Charges - Projet MERN
+ù RΘsumΘs intelligents
+3 Livrables Attendus
+3.1 Code Source
+1. Structure du Projet
+Format de livraison : Archive ZIP ou lien GitHub privΘ
+Structure attendue :
+projet-mern-[nom]/
+|-- backend/
+| |-- config/
+| |-- controllers/
+| |-- models/
+| |-- routes/
+| |-- middleware/
+| |-- server.js
+| |-- package.json
+| +-- .env.example # Exemple de variables
+|-- frontend/
+| |-- src/
+| |-- public/
+| |-- package.json
+| +-- vite.config.js
+|-- README.md # Instructions dÆinstallation
++-- rapport.pdf # Mini rapport
+3.2 Validation de la Note
+Attention : Soutenance Obligatoire
+La note finale nÆest validΘe quÆaprΦs la soutenance. Vous devrez :
+1. PrΘsenter votre projet
+ù DΘmo en direct de lÆapplication
+ù Explication de lÆarchitecture
+ù PrΘsentation des fonctionnalitΘs clΘs
+2. RΘpondre aux questions techniques
+ù Questions sur le code (backend et frontend)
+ù Explication des choix techniques
+ù ComprΘhension des concepts MERN
+ù Justification des relations de base de donnΘes
+Important : Une excellente application sans capacitΘ α expliquer le code peut
+entraεner une note rΘduite. LÆobjectif est de vΘrifier votre comprΘhension personnelle.
+5
+
+--- Page 6 ---
+Cahier des Charges - Projet MERN
+4 ModalitΘs Pratiques
+4.1 Date et Heure de Soumission
+Deadline Stricte
+ù Date limite : La veille de votre soutenance programmΘe
+ù Heure limite : 23h59 prΘcises
+ù Format :
+ù Fichier ZIP nommΘ : NOM_Prenom_ProjetMERN.zip
+ù OU Lien GitHub privΘ avec accΦs professeurs
+PΘnalitΘs : Retard = -2 points par heure de retard (maximum -10 points)
+6
+
+================================================================================
+FILE: MERN1.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 1
+Fondations Approfondies du Back-end :
+Node.js, Express et lÆArchitecture Projet
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+7 septembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques DΘtaillΘs 2
+2 Partie 1 : Concepts Architecturaux et Techniques (1h15) 2
+2.1 LÆApproche "API-First" et lÆArchitecture MERN . . . . . . . . . . . . . . . 2
+2.2 Architecture du Projet : La SΘparation des PrΘoccupations . . . . . . . . . 3
+2.3 PlongΘe dans le Moteur Node.js . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.4 Express.js : La syntaxe ΘlΘgante pour le web . . . . . . . . . . . . . . . . . 4
+3 Partie 2 : Atelier Pratique et Mise en Place (1h45) 5
+3.1 ╔tape 1 : Configurer un Environnement de DΘveloppement Professionnel . 5
+3.2 ╔tape 2 : DΘmarrage du Projet et DΘpendances . . . . . . . . . . . . . . . 5
+3.3 ╔tape 3 : CrΘation et AmΘlioration du Serveur Express . . . . . . . . . . . 5
+3.4 ╔tape 4 : Test de lÆAPI avec Postman . . . . . . . . . . . . . . . . . . . . . 7
+4 Conclusion et Vision pour la Suite 7
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtudiant) 7
+
+--- Page 2 ---
+Cours MERN - Semaine 1 : Fondations Back-end
+1 Objectifs PΘdagogiques DΘtaillΘs
+└ la fin de cette session, vous serez capable de :
+ù ThΘoriser lÆarchitecture MERN et lÆapproche "API-First".
+ù Concevoir une architecture de projet back-end scalable (SoC).
+ù Expliquer le modΦle dÆexΘcution de Node.js (Event Loop, I/O non-bloquant).
+ù Mettre en place un environnement de dΘveloppement complet (VS Code, Node.js,
+Postman).
+ù Maεtriser le cycle de vie dÆun projet NPM.
+ù Construire un serveur Express qui gΦre les requΩtes GET et POST.
+ù Comprendre le r⌠le du middleware express.json() pour parser le corps des re-
+quΩtes.
+ù Valider des points de terminaison dÆAPI avec Postman.
+ù Optimiser le flux de travail avec ænodemonæ.
+2 Partie 1 : Concepts Architecturaux et Techniques
+(1h15)
+2.1 LÆApproche "API-First" et lÆArchitecture MERN
+Dans le dΘveloppement moderne, on ne construit pas une maison en commenτant par
+la peinture. On commence par les fondations. Pour une application web, lÆAPI est cette
+fondation.
+DΘfinition (API-First) : Une stratΘgie de dΘveloppement o∙ lÆAPI est traitΘe
+comme un produit de premiΦre classe. Elle est conτue, documentΘe et construite
+avant le dΘveloppement de toute application cliente qui la consommera.
+Figure 1 û MERN Stack
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 1 : Fondations Back-end
+2.2 Architecture du Projet : La SΘparation des PrΘoccupations
+Un projet qui grandit sans structure devient rapidement un "plat de spaghettis" im-
+possible α maintenir. Le principe de SΘparation des PrΘoccupations (Separation of
+Concerns - SoC) est la clΘ. Chaque partie de lÆapplication doit avoir une seule respon-
+sabilitΘ.
+Vision Cible : MΩme si nous commenτons avec un seul fichier æserver.jsæ, nous visons
+une architecture claire et Θvolutive. La comprendre dΦs maintenant donne un sens α
+chaque nouvelle Θtape.
+node_modules
+DΘpendances installΘes par npm
+config
+Fichiers de configuration (ex : connexion BDD)
+controllers
+Logique mΘtier : que faire quand une route est appelΘe?
+models
+SchΘmas de donnΘes (structure dÆun article, dÆun utilisateur)
+mon-api-blog routes
+DΘfinition des points de terminaison (endpoints) de lÆAPI
+.env
+Variables dÆenvironnement (secrets, clΘs API)
+.gitignore
+Fichiers et dossiers α ignorer par Git
+package.json
+Manifeste du projet
+server.js
+Point dÆentrΘe de lÆapplication
+Figure 2 û Architecture cible dÆun projet Express.js professionnel.
+2.3 PlongΘe dans le Moteur Node.js
+Comprendre ce qui rend Node.js si particulier est essentiel. Sa puissance ne vient pas
+de la vitesse brute dÆexΘcution du code, mais de sa maniΦre de gΘrer les opΘrations.
+ù Le Moteur V8 : Le c£ur de Node.js est le moteur JavaScript V8 de Google.
+ù Single-Threaded (Mono-processus) : Node.js exΘcute tout le code dans un seul
+processus.
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 1 : Fondations Back-end
+ù LÆEvent Loop et lÆI/O non-bloquant : La plupart des opΘrations dans une
+application web sont des opΘrations dÆEntrΘe/Sortie (I/O).
+Figure 3 û SchΘma simplifiΘ de la boucle dÆΘvΘnements (Event Loop) de Node.js.
+2.4 Express.js : La syntaxe ΘlΘgante pour le web
+Node.jspurfournitlesmodulesæhttpæetæhttpsæpourcrΘerunserveur,maisleurutilisa-
+tion est bas niveau et complexe. Express est une surcouche qui abstrait cette complexitΘ
+et nous offre une API simple et puissante pour gΘrer le routage et les middlewares. Il
+transforme un code complexe en quelques lignes lisibles.
+4
+
+--- Page 5 ---
+Error reading MERN1.pdf: 'charmap' codec can't encode character '\u2212' in position 338: character maps to <undefined>
+
+================================================================================
+FILE: MERN1P.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Projet AvancΘ de
+Mi-Formation
+API pour une Plateforme de Cours en Ligne : Maεtrise
+des Relations de DonnΘes
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+9 septembre 2025
+Table des matiΦres
+1 Introduction et Objectifs 2
+1.1 CompΘtences α DΘmontrer . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.2 Concept GΘnΘral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 ModΦles de DonnΘes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3.1 ModΦle User . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3.2 ModΦle Profile . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3.3 ModΦle Course . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3.4 ModΦle Review . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4 FonctionnalitΘs Requises (Points de Terminaison) . . . . . . . . . . . . . . 3
+1.4.1 Gestion des Utilisateurs . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4.2 Gestion des Profils (Relation 1-to-1) . . . . . . . . . . . . . . . . . 3
+1.4.3 Gestion des Cours . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4.4 Gestion des Inscriptions (Relation Many-to-Many) . . . . . . . . . . 4
+1.4.5 Gestion des Critiques (Relation 1-to-Many) . . . . . . . . . . . . . 4
+1.5 CritΦres dÆ╔valuation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.6 ModΘlisation des Relations . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.6.1 Relation One-to-One (User et Profile) . . . . . . . . . . . . . . . . . 5
+1.6.2 Relation Many-to-Many (User et Course) . . . . . . . . . . . . . . . 5
+1.7 ImplΘmentation des Contr⌠leurs de Relations . . . . . . . . . . . . . . . . . 5
+1.7.1 Inscription (Many-to-Many) . . . . . . . . . . . . . . . . . . . . . . 5
+1.7.2 Utilisation de .populate() . . . . . . . . . . . . . . . . . . . . . . . 6
+1.7.3 CrΘation dÆune Critique (One-to-Many) . . . . . . . . . . . . . . . . 7
+
+--- Page 2 ---
+Error reading MERN1P.pdf: 'charmap' codec can't encode character '\u2194' in position 595: character maps to <undefined>
+
+================================================================================
+FILE: MERN1 4.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 4
+Finalisation des OpΘrations CRUD
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+9 septembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques DΘtaillΘs 2
+2 Partie 1 : Concepts Techniques Approfondis (1h15) 2
+2.1 Cibler une Ressource : Les ParamΦtres de Route . . . . . . . . . . . . . . . 2
+2.2 MΘthodes HTTP et Status Codes AppropriΘs . . . . . . . . . . . . . . . . . 2
+2.3 Les Outils Mongoose pour le CRUD . . . . . . . . . . . . . . . . . . . . . . 3
+3 Partie 2 : Atelier Pratique - ImplΘmentation du CRUD (1h45) 4
+3.1 ╔tape 1 : Lire un Article SpΘcifique (Read One) . . . . . . . . . . . . . . . 4
+3.2 ╔tape 2 : Mettre α Jour un Article (Update) . . . . . . . . . . . . . . . . . 5
+3.3 ╔tape 3 : Supprimer un Article (Delete) . . . . . . . . . . . . . . . . . . . 6
+3.4 ╔tape 4 : Cycle de Test Complet avec Postman . . . . . . . . . . . . . . . 7
+4 Conclusion et Vision pour la Suite 7
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtudiant) 7
+
+--- Page 2 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+1 Objectifs PΘdagogiques DΘtaillΘs
+Cette semaine, nous allons rendre notre API entiΦrement fonctionnelle en complΘtant
+lÆacronyme CRUD. └ la fin de cette sΘance, vous serez capable de :
+ù Comprendre et utiliser les paramΦtres de route (ex : /api/articles/:id) pour
+cibler des ressources spΘcifiques.
+ù AccΘder aux valeurs des paramΦtres via lÆobjet req.params dans les contr⌠leurs.
+ù ImplΘmenter la logique pour lire un document unique depuis MongoDB (Read
+One).
+ù ImplΘmenter la logique pour mettre α jour un document existant (Update).
+ù ImplΘmenter la logique pour supprimer un document (Delete).
+ù UtiliserlesmΘthodesMongooseappropriΘes:findById,findByIdAndUpdate,findByIdAndDelete.
+ù GΘrer les cas o∙ une ressource nÆest pas trouvΘe en renvoyant un statut HTTP 404
+Not Found.
+ù Maεtriser le cycle de test complet dÆune ressource API avec Postman.
+2 Partie 1 : Concepts Techniques Approfondis (1h15)
+2.1 Cibler une Ressource : Les ParamΦtres de Route
+JusquÆα prΘsent, nos routes comme /api/articles sÆappliquaient α lÆensemble de la
+collection. Comment faire pour lire, modifier ou supprimer un seul article spΘcifique? La
+rΘponse est : les paramΦtres de route.
+Un paramΦtre de route est un segment dÆURL variable, que lÆon dΘfinit en prΘfixant
+son nom par deux-points (æ :æ).
+Exemple : Dans la dΘfinition de route router.get(Æ/:idÆ, ...), :id est un para-
+mΦtre de route.
+ù SiunclientfaitunerequΩteGETvers/api/articles/60c72b2f9b1d8c001f8e4b2a,
+ù Express intercepte cette requΩte, comprend que 60c72b2f9b1d8c001f8e4b2a est
+la valeur du paramΦtre id,
+ù Et rend cette valeur disponible dans le contr⌠leur via lÆobjet req.params. On y
+accΦdera avec req.params.id.
+2.2 MΘthodes HTTP et Status Codes AppropriΘs
+Pour une API REST professionnelle, il est crucial dÆutiliser les bons verbes HTTP et
+de renvoyer les bons codes de statut.
+PUT : UtilisΘ pour remplacer entiΦrement une ressource existante. Le client doit fournir
+lÆintΘgralitΘ du nouvel objet.
+DELETE : UtilisΘ pour supprimer une ressource.
+PATCH : (Alternative α PUT) UtilisΘ pour une mise α jour partielle. Le client ne fournit
+que les champs α modifier. Nous utiliserons PUT dans ce cours pour sa simplicitΘ.
+Codes de Statut Essentiels pour aujourdÆhui :
+ù 200 OK : SuccΦs standard. Parfait pour un GET ou un PUT rΘussi.
+ù 404 Not Found : Crucial. Doit Ωtre renvoyΘ lorsque le client demande une ressource
+qui nÆexiste pas (ex : un article avec un ID incorrect).
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+GET
+/api/articles/60c72b2f9b1d8c001f8e4b2a
+DΘfinition de la Route :
+router.get(Æ/:idÆ,
+getArticleById);
+Dans le contr⌠leur getArticleById :
+const id = req.params.id;
+// la variable ÆidÆ contient mainte-
+nant "60c72b2f9b1d8c001f8e4b2a"
+Figure 1 û Comment Express mappe un segment dÆURL α req.params.
+ù 204 No Content : Souvent utilisΘ pour un DELETE rΘussi, quand le serveur nÆa rien
+de plus α dire et ne renvoie pas de corps de rΘponse. Par simplicitΘ et pour donner
+un feedback clair, nous renverrons un 200 OK avec un message JSON.
+2.3 Les Outils Mongoose pour le CRUD
+Mongoose nous fournit des mΘthodes directes pour chaque opΘration que nous voulons
+implΘmenter. Toutes ces mΘthodes retournent des promesses, elles sont donc parfaites
+pour async/await.
+ù Model.findById(id) : Recherche un unique document correspondant α lÆID fourni.
+Retourne le document sÆil est trouvΘ, sinon null.
+ù Model.findByIdAndUpdate(id, update, options) : Trouve un document par son
+ID et le met α jour.
+ù id : LÆID du document α mettre α jour.
+ù update : Un objet contenant les champs α modifier (ex : req.body).
+ù options : Un objet de configuration. LÆoption { new: true } est trΦs impor-
+tante : elle force la mΘthode α retourner le document aprΦs la mise α jour, et
+non avant.
+ù Model.findByIdAndDelete(id) : Trouve un document par son ID et le supprime.
+Retourne le document qui a ΘtΘ supprimΘ.
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+3 Partie 2 : Atelier Pratique - ImplΘmentation du
+CRUD (1h45)
+Nous allons reprendre notre projet et complΘter la gestion des articles.
+3.1 ╔tape 1 : Lire un Article SpΘcifique (Read One)
+1. Mettre α jour le routeur (routes/articleRoutes.js) : Ajoutez une nouvelle
+route qui accepte un paramΦtre id.
+// ... (importations)
+1
+const { getAllArticles , createArticle , getArticleById } = require
+2
+(Æ../controllers/articleControllerÆ);
+3
+router . get(Æ/Æ, getAllArticles);
+4
+router .post(Æ/Æ, createArticle);
+5
+6
+// NOUVELLE ROUTE : Doit correspondre α la nouvelle fonction du
+7
+controleur
+router . get(Æ/:idÆ, getArticleById);
+8
+9
+module. exports = router ;
+10
+11
+Listing 1 û routes/articleRoutes.js - Ajout de la route GET by ID
+2. Ajouter la logique au contr⌠leur(controllers/articleController.js):CrΘez
+la fonction ægetArticleByIdæ.
+// ... (autres fonctions)
+1
+2
+// @desc RΘcupΘrer un article par son ID
+3
+// @route GET /api/articles/:id
+4
+const getArticleById = async (req , res) => {
+5
+try {
+6
+const article = await Article .findById(req.params. id);
+7
+8
+// Si lÆarticle nÆest pas trouvΘ, findById retourne null
+9
+if (! article ) {
+10
+return res . status(404) . json({ message: "Article non
+11
+trouvΘ." });
+}
+12
+13
+res . status(200) . json( article );
+14
+} catch (err) {
+15
+res . status(500) . json({ message: "Erreur serveur.", error :
+16
+err .message });
+}
+17
+};
+18
+19
+module. exports = {
+20
+getAllArticles ,
+21
+createArticle ,
+22
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+getArticleById // Ne pas oublier dÆexporter la nouvelle
+23
+fonction
+};
+24
+25
+Listing 2 û controllers/articleController.js - Ajout de getArticleById
+3.2 ╔tape 2 : Mettre α Jour un Article (Update)
+1. Mettre α jour le routeur :
+// ... (importations)
+1
+const { getAllArticles , createArticle , getArticleById ,
+2
+updateArticle } = require(Æ../controllers/articleControllerÆ);
+3
+// ... (routes GET et POST)
+4
+router . get(Æ/:idÆ, getArticleById);
+5
+6
+// NOUVELLE ROUTE
+7
+router .put(Æ/:idÆ, updateArticle);
+8
+9
+module. exports = router ;
+10
+11
+Listing 3 û routes/articleRoutes.js - Ajout de la route PUT
+2. Ajouter la logique au contr⌠leur :
+// ... (autres fonctions)
+1
+2
+// @desc Mettre α jour un article
+3
+// @route PUT /api/articles/:id
+4
+const updateArticle = async (req , res) => {
+5
+try {
+6
+const updatedArticle = await Article .findByIdAndUpdate(
+7
+req.params.id , // LÆID de lÆarticle α mettre α jour
+8
+req.body, // Les nouvelles donnΘes de lÆarticle
+9
+{ new: true , runValidators : true } // Options
+10
+);
+11
+12
+if (! updatedArticle) {
+13
+return res . status(404) . json({ message: "Article non
+14
+trouvΘ." });
+}
+15
+16
+res . status(200) . json(updatedArticle);
+17
+} catch (err) {
+18
+res . status(400) . json({ message: "Erreur lors de la mise α
+19
+jour.", error : err .message });
+}
+20
+};
+21
+22
+module. exports = {
+23
+// ...
+24
+5
+
+--- Page 6 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+getArticleById ,
+25
+updateArticle // Exporter la fonction
+26
+};
+27
+28
+Listing 4 û controllers/articleController.js - Ajout de updateArticle
+3.3 ╔tape 3 : Supprimer un Article (Delete)
+1. Mettre α jour le routeur :
+// ... (importations)
+1
+const { getAllArticles , createArticle , getArticleById ,
+2
+updateArticle , deleteArticle } = require(Æ../controllers/
+articleControllerÆ);
+3
+// ... (routes GET, POST, PUT)
+4
+router .put(Æ/:idÆ, updateArticle);
+5
+6
+// NOUVELLE ROUTE
+7
+router . delete(Æ/:idÆ, deleteArticle);
+8
+9
+module. exports = router ;
+10
+11
+Listing 5 û routes/articleRoutes.js - Ajout de la route DELETE
+2. Ajouter la logique au contr⌠leur :
+// ... (autres fonctions)
+1
+2
+// @desc Supprimer un article
+3
+// @route DELETE /api/articles/:id
+4
+const deleteArticle = async (req , res) => {
+5
+try {
+6
+const deletedArticle = await Article .findByIdAndDelete(
+7
+req.params. id);
+8
+if (! deletedArticle) {
+9
+return res . status(404) . json({ message: "Article non
+10
+trouvΘ." });
+}
+11
+12
+res . status(200) . json({ message: "Article supprimΘ avec
+13
+succΦs.", id : req.params. id });
+} catch (err) {
+14
+res . status(500) . json({ message: "Erreur serveur.", error :
+15
+err .message });
+}
+16
+};
+17
+18
+module. exports = {
+19
+// ...
+20
+updateArticle ,
+21
+6
+
+--- Page 7 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+deleteArticle // Exporter la fonction
+22
+};
+23
+24
+Listing 6 û controllers/articleController.js - Ajout de deleteArticle
+3.4 ╔tape 4 : Cycle de Test Complet avec Postman
+Suivez ce scΘnario pour valider que tout fonctionne.
+1. CrΘez un article : Envoyez une requΩte POST α /api/articles avec un corps
+JSON. Copiez lÆID (_id) de lÆarticle crΘΘ dans la rΘponse.
+2. Lisez tous les articles : Envoyez une requΩte GET α /api/articles pour confirmer
+que votre nouvel article est bien dans la liste.
+3. Lisez lÆarticle spΘcifique : Envoyez une requΩte GET α /api/articles/VOTRE_ID.
+Vous devriez recevoir uniquement cet article.
+4. Testez le cas 404 : Envoyez une requΩte GET α /api/articles/un_id_incorrect.
+Vous devriez recevoir un statut 404 Not Found et un message dÆerreur.
+5. Mettez α jour lÆarticle : Envoyez une requΩte PUT α /api/articles/VOTRE_ID.
+Dans lÆonglet "Body", mettez un JSON avec un titre ou un contenu diffΘrent. La
+rΘponse doit Ωtre lÆarticle mis α jour.
+6. Supprimez lÆarticle : Envoyez une requΩte DELETE α /api/articles/VOTRE_ID.
+Vous devriez recevoir un message de succΦs.
+7. Confirmezlasuppression:EnvoyezαnouveauunerequΩteGETα/api/articles/VOTRE_-
+ID. Vous devriez maintenant recevoir une erreur 404 Not Found.
+4 Conclusion et Vision pour la Suite
+FΘlicitations! Vous disposez maintenant dÆune API REST entiΦrement fonctionnelle
+pour une ressource. Vous maεtrisez le cycle CRUD complet, la gestion des paramΦtres de
+route et le renvoi des codes de statut HTTP appropriΘs. CÆest le socle de la quasi-totalitΘ
+des applications web.
+La semaine prochaine, nous aborderons des sujets plus avancΘs pour rendre notre API
+encore plus robuste et professionnelle : la validation des donnΘes entrantes et une
+gestion des erreurs centralisΘe.
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtu-
+diant)
+Appliquez le cycle CRUD complet α la ressource "Utilisateurs".
+1. ImplΘmentez les routes et les fonctions de contr⌠leur pour :
+ù GET /api/users/:id (RΘcupΘrer un utilisateur par son ID)
+ù PUT /api/users/:id (Mettre α jour un utilisateur)
+ù DELETE /api/users/:id (Supprimer un utilisateur)
+2. Logiqueducontr⌠leur:UtilisezUser.findById(),User.findByIdAndUpdate(),
+et User.findByIdAndDelete().
+3. Gestion des erreurs : NÆoubliez pas de gΘrer le cas o∙ un utilisateur nÆest
+7
+
+--- Page 8 ---
+Cours MERN - Semaine 4 : Finalisation des OpΘrations CRUD
+pas trouvΘ (erreur 404).
+4. Cycle de test complet : Utilisez Postman pour tester rigoureusement chaque
+nouvelle route, y compris les cas dÆerreur.
+Note Importante : Travail α
+Rendre
+Votre compte rendu devra inclure des captures
+dÆΘcran de Postman pour chaque nouvelle route implΘmentΘe
+(GET by ID, PUT, DELETE), y compris le test du cas 404.
+Expliquez le r⌠le des options { new: true } et {
+runValidators: true } dans findByIdAndUpdate. ╔chΘance : La
+soumission doit se faire au plus tard la veille de la prochaine
+sΘance, α 23h59 prΘcises. Ce compte rendu est obligatoire et
+notΘ.
+8
+
+================================================================================
+FILE: MERN1 5.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 5
+Robustesse de lÆAPI : Validation et Gestion des
+Erreurs
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+20 octobre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques DΘtaillΘs 2
+2 Partie 1 : Concepts Techniques Approfondis (1h30) 2
+2.1 Finaliser le CRUD : Read One, Update, Delete . . . . . . . . . . . . . . . . 2
+2.2 La Validation : Le Gardien de Vos DonnΘes . . . . . . . . . . . . . . . . . . 2
+2.3 Gestion CentralisΘe des Erreurs . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.4 Les Middlewares Express : Le C£ur de lÆApplication . . . . . . . . . . . . 5
+2.5 Le ProblΦme du try...catch rΘpΘtitif . . . . . . . . . . . . . . . . . . . . 5
+3 Partie 2 : Atelier Pratique - Robustification de lÆAPI (1h30) 6
+3.1 ╔tape 1 : AmΘlioration de la Validation du ModΦle . . . . . . . . . . . . . 6
+3.2 ╔tape 2 : CrΘation des Middlewares de Gestion dÆErreurs . . . . . . . . . . 6
+3.3 ╔tape 3 : IntΘgration des Middlewares dans server.js . . . . . . . . . . . 7
+3.4 ╔tape 4 : Simplification des Contr⌠leurs avec express-async-handler . . . 8
+3.5 ╔tape 5 : Test final . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+4 Conclusion et Vision pour la Suite 9
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtudiant) 9
+
+--- Page 2 ---
+Cours MERN - Semaine 5 : Validation et Gestion des Erreurs
+1 Objectifs PΘdagogiques DΘtaillΘs
+Cette semaine, nous transformons notre API fonctionnelle en une API professionnelle
+et fiable. └ la fin de cette sΘance, vous serez capable de :
+ù Expliquer pourquoi la validation c⌠tΘ serveur est une mesure de sΘcuritΘ et de
+cohΘrence indispensable.
+ù AmΘliorer les schΘmas Mongoose avec des validateurs avancΘs (longueur min/max,
+expressions rΘguliΦres, etc.).
+ù Comprendre le concept de middleware dans Express et son fonctionnement (le
+cycle æreqæ, æresæ, ænextæ).
+ù CrΘerdesmiddlewarespersonnalisΘspourgΘrerdescasspΘcifiquescommelagestion
+des routes non trouvΘes (404).
+ù ImplΘmenter un middleware de gestion dÆerreurs global pour centraliser et stan-
+dardiser les rΘponses dÆerreur de lÆAPI.
+ù ╔liminer la rΘpΘtition des blocs ætry...catchæ dans les contr⌠leurs en utilisant un
+"wrapper" de fonction asynchrone comme express-async-handler.
+ù Structurer le projet pour accueillir les middlewares de maniΦre organisΘe.
+2 Partie 1 : Concepts Techniques Approfondis (1h30)
+2.1 Finaliser le CRUD : Read One, Update, Delete
+Nous savons crΘer et tout lire. Pour une API complΦte, il faut implΘmenter :
+ù Read One (GET / :id) : Utilisation de Model.findById(). Gestion cruciale du
+cas o∙ lÆID nÆexiste pas (retourner une 404).
+ù Update (PUT / :id) : Utilisation de Model.findByIdAndUpdate(). Comprendre
+les options { new: true, runValidators: true }.
+ù Delete (DELETE / :id) : Utilisation de Model.findByIdAndDelete().
+2.2 La Validation : Le Gardien de Vos DonnΘes
+Une API robuste ne doit jamais faire confiance aux donnΘes envoyΘes par le client. La
+validation c⌠tΘ serveur est la premiΦre ligne de dΘfense pour assurer :
+ù La SΘcuritΘ :EmpΩchelesinjectionsdecodemalveillantoudedonnΘescorrompues.
+ù La CohΘrence : Garantit que seules des donnΘes valides et conformes α notre
+modΦle mΘtier sont enregistrΘes dans la base.
+ù Une Meilleure ExpΘrience DΘveloppeur : Fournit des messages dÆerreur clairs
+lorsquÆune requΩte est mal formΘe.
+Mongoose nous offre un systΦme de validation puissant directement dans les schΘmas.
+Nous avons dΘjα vu ærequiredæ, mais nous pouvons aller beaucoup plus loin.
+const userSchema = new mongoose.Schema({
+1
+email: {
+2
+type: String ,
+3
+required : [true , "LÆemail est requis"] ,
+4
+unique: true , // MongoDB sÆassure que chaque email est unique
+5
+via un index
+lowercase : true , // Convertit lÆemail en minuscules avant de
+6
+sauvegarder
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 5 : Validation et Gestion des Erreurs
+trim: true ,
+7
+match: [/\S+@\S+\.\S+/, ÆFormat d\Æemail invalideÆ] // Valide
+8
+le format via Regex
+},
+9
+age: {
+10
+type: Number,
+11
+min: [18 , ÆDoit Ωtre majeurÆ] ,
+12
+max: [120, ÆAge invalideÆ]
+13
+},
+14
+role : {
+15
+type: String ,
+16
+enum: [ÆuserÆ, ÆadminÆ] , // Limite les valeurs possibles
+17
+default : ÆuserÆ
+18
+}
+19
+});
+20
+Listing 1 û Exemple de validateurs avancΘs dans un schΘma Mongoose
+ù required : rend le champ obligatoire. Si lÆutilisateur ne fournit pas dÆadresse e-
+mail, Mongoose renverra une erreur avant mΩme dÆinteragir avec la base. Le message
+dÆerreur personnalisΘ (ici : "LÆemail est requis") est trΦs utile pour informer le
+client de maniΦre claire.
+ù unique : assure quÆaucune autre entrΘe ne possΦde la mΩme valeur pour ce champ.
+Attention:ilnesÆagitpasdÆunvalidateurlogiquedansMongoose,maisdelacrΘation
+dÆun index uniquec⌠tΘMongoDB.SideuxdocumentscontiennentlemΩmee-mail,
+la base renverra une erreur de duplication (E11000 duplicate key error). Il est
+donc conseillΘ de gΘrer cette erreur explicitement dans le middleware dÆerreurs.
+ù lowercase et trim : Ces options permettent de normaliser les donnΘes avant leur
+insertion. lowercase: true convertit automatiquement la chaεne en minuscules, ga-
+rantissant une comparaison cohΘrente (utile pour les e-mails, les noms dÆutilisateur,
+etc.). trim: true Θlimine les espaces superflus, Θvitant des erreurs subtiles lors des
+recherches ou comparaisons.
+ù match : applique une expression rΘguliΦre (regex) pour vΘrifier la conformitΘ du
+champ.
+Si la valeur ne correspond pas, Mongoose dΘclenche une erreur de validation per-
+sonnalisΘe avec le message associΘ.
+ù min et max : Ces validateurs numΘriques contr⌠lent les bornes dÆun champ de type
+Number. Ici, un utilisateur doit Ωtre ΓgΘ dÆau moins 18 ans et dÆau plus 120 ans.
+Ces contraintes garantissent une cohΘrence mΘtier simple sans ajouter de logique
+supplΘmentaire dans le contr⌠leur.
+ù enum : Restreint les valeurs possibles dÆun champ α un ensemble prΘdΘfini. Cela per-
+met dÆΘviter les incohΘrences du type "User", "Utilisateur" ou "adminstrateur"
+dans la base. Dans ce cas, seul "user" ou "admin" est acceptΘ.
+ù default : DΘfinit une valeur par dΘfaut lorsquÆaucune valeur nÆest fournie. Par
+exemple,siunnouveaucompteestcrΘΘsansprΘciserder⌠le,ilseraautomatiquement
+dΘfini comme "user".
+Les Expressions RΘguliΦres (Regex) Les expressions rΘguliΦres (ou regex) sont
+des motifs utilisΘs pour rechercher ou valider des chaεnes de caractΦres selon des rΦgles
+prΘcises. Elles constituent un outil fondamental pour vΘrifier la conformitΘ dÆune donnΘe
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 5 : Validation et Gestion des Erreurs
+textuelle, comme une adresse e-mail, un mot de passe, ou un numΘro de tΘlΘphone.
+Dans Mongoose (et plus largement en JavaScript), les regex sÆΘcrivent entre deux
+barres obliques / ... /, et peuvent contenir des symboles spΘciaux qui dΘcrivent le motif
+attendu.
+match: [/\S+@\S+\.\S+/, "Format dÆemail invalide"]
+1
+Listing 2 û Exemple de validation dÆun email par regex
+Cette ligne signifie :
+ù
+S+ : une ou plusieurs occurrences (+) de tout caractΦre non espace (
+S).
+ù @ : le symbole arobase obligatoire.
+ù
+S+ : α nouveau une ou plusieurs occurrences de caractΦres non espaces (le nom de
+domaine).
+ù
+. : un point littΘral (.) ù il faut lÆΘchapper avec un antislash car le point seul
+reprΘsente ½ nÆimporte quel caractΦre ╗.
+ù
+S+ : enfin, une ou plusieurs lettres aprΦs le point, reprΘsentant le domaine de haut
+niveau (.com, .fr, etc.).
+Ainsi, la regex /\S+@\S+\.\S+/ validera des adresses comme :
+ù user@example.com
+ù jean.dupont@mail.fr
+Mais rejettera des valeurs invalides telles que :
+ù userexample.com (pas dÆarobase)
+ù user@com (pas de point aprΦs lÆarobase)
+ù user@.com (nom de domaine vide)
+Principaux symboles utilisΘs en regex :
+Symbole Signification
+. NÆimporte quel caractΦre (sauf le retour α la ligne)
+\d Un chiffre (0û9)
+\w Une lettre, un chiffre ou un underscore (_)
+\s Un espace ou caractΦre blanc
+\S Tout sauf un espace
+[a-z] Une lettre minuscule entre a et z
+[A-Z] Une lettre majuscule entre A et Z
+[0-9] Un chiffre entre 0 et 9
++ Une ou plusieurs occurrences
+* ZΘro ou plusieurs occurrences
+? ZΘro ou une occurrence
+ê DΘbut de la chaεne
+$ Fin de la chaεne
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 5 : Validation et Gestion des Erreurs
+2.3 Gestion CentralisΘe des Erreurs
+Plut⌠t que de rΘpΘter des blocs try...catch identiques dans chaque contr⌠leur, nous
+allons introduire un middleware de gestion dÆerreurs personnalisΘ dans Express pour cap-
+turer les erreurs (ID invalide, validation Mongoose ΘchouΘe) et renvoyer des rΘponses
+JSON formatΘes de maniΦre cohΘrente.
+2.4 Les Middlewares Express : Le C£ur de lÆApplication
+Un middleware est une fonction qui a accΦs α lÆobjet de la requΩte (req), α lÆobjet
+de la rΘponse (res), et α la prochaine fonction middleware dans le cycle requΩte-rΘponse,
+communΘment appelΘe next.
+Le cycle de vie dÆune requΩte avec les middlewares : Une requΩte entrante
+traverse une chaεne de middlewares comme une voiture sur une chaεne de montage.
+Chaque station (middleware) peut examiner la voiture (la requΩte), y ajouter ou
+modifier quelque chose, puis soit lÆenvoyer α la station suivante (next()), soit lÆΘjecter
+de la chaεne (envoyer une rΘponse).
+Middleware 1 next() Middleware 2 next() Route Handler
+RequΩte RΘponse
+(ex : Logger) (ex : Auth) (Contr⌠leur)
+Figure 1 û Flux dÆune requΩte α travers une chaεne de middlewares.
+Il existe un type spΘcial de middleware : le middleware de gestion dÆerreurs. Il
+est dΘfini avec 4 arguments au lieu de 3 : (err, req, res, next). Express lÆappellera
+automatiquement si une erreur est passΘe α la fonction next() (ex : next(error)).
+2.5 Le ProblΦme du try...catch rΘpΘtitif
+Dansnoscontr⌠leurs,chaquefonctionasynchroneestenveloppΘedansunbloctry...catch.
+CÆest fonctionnel, mais rΘpΘtitif et verbeux.
+const myController = async (req , res) => {
+1
+try {
+2
+// Logique mΘtier...
+3
+} catch (err) {
+4
+res . status(500) . json({ message: "Erreur", error : err .message
+5
+});
+}
+6
+};
+7
+Listing 3 û Le schΘma rΘpΘtitif que nous voulons Θviter
+La solution est dÆutiliser un "wrapper" qui sÆoccupe de ce bloc pour nous. Le package
+express-async-handler est parfait pour cela. Il enveloppe nos fonctions de contr⌠leur et
+sÆassure que si une erreur se produit, elle est automatiquement passΘe α notre middleware
+de gestion dÆerreurs global via next(err).
+5
+
+--- Page 6 ---
+Error reading MERN1 5.pdf: 'charmap' codec can't encode character '\u2212' in position 1581: character maps to <undefined>
+
+================================================================================
+FILE: MERN1 (5).pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 8
+Gestion dÆ╔tat Globale en React
+useContext, Redux et Zustand
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+8 novembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques 3
+2 Partie 1 : Introduction et Concepts (40 min) 3
+2.1 Le ProblΦme : Prop Drilling . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Solution 1 : useContext . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2.1 Comment crΘer un Context? . . . . . . . . . . . . . . . . . . . . . . 4
+2.3 Solution 2 : Redux Toolkit . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.4 Solution 3 : Zustand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3 Partie 2 : Le Projet - Galerie de Personnages (2h20) 6
+3.1 Structure du Projet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.2 Le Fichier CSS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+4 Version 1 : useContext (40 min) 11
+4.1 CrΘer le Context . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4.2 Wrapper dans main.jsx . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.3 Les Composants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+5 Version 2 : Redux Toolkit (50 min) 17
+5.1 Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5.2 CrΘer le Slice . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5.3 Configurer le Store . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.4 Provider dans main.jsx . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.5 Les Composants Redux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+6 Version 3 : Zustand (40 min) 23
+6.1 Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+6.2 CrΘer le Store . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+6.3 main.jsx (Pas de Provider!) . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+6.4 Les Composants Zustand . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+
+--- Page 2 ---
+Cours MERN - Semaine 8 : Gestion dÆ╔tat Globale
+7 Comparaison Finale 28
+8 Travail α Rendre 28
+9 Ressources 28
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 8 : Gestion dÆ╔tat Globale
+1 Objectifs PΘdagogiques
+└ la fin de cette sΘance, vous serez capable de :
+ù Comprendre le problΦme du prop drilling
+ù CrΘer un Context avec useContext
+ù Configurer Redux Toolkit dans un projet
+ù Utiliser Zustand pour une gestion dÆΘtat simple
+ù GΘrer des donnΘes dÆAPI avec Θtat global
+ù Choisir la solution adaptΘe selon votre projet
+2 Partie 1 : Introduction et Concepts (40 min)
+2.1 Le ProblΦme : Prop Drilling
+ProblΦme : Passer des props α travers plusieurs niveaux de composants.
+// App doit passer username α tous les enfants
+1
+function App() {
+2
+const [username , setUsername] = useState("Alice");
+3
+4
+return <Header username={username}>
+5
+<Navbar username={username}>
+6
+<UserMenu username={username} /> {/* Utilise enfin !
+7
+*/}
+</Navbar>
+8
+</Header>;
+9
+}
+10
+Solution : ╔tat global accessible partout directement.
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 8 : Gestion dÆ╔tat Globale
+2.2 Solution 1 : useContext
+2.2.1 Comment crΘer un Context?
+╔tape 1 : CrΘer le Context
+import { createContext , useContext , useState } from ÆreactÆ;
+1
+2
+const UserContext = createContext() ;
+3
+4
+export const UserProvider = ({ children }) => {
+5
+const [username , setUsername] = useState("Alice");
+6
+7
+return (
+8
+<UserContext. Provider value={{ username , setUsername }}>
+9
+{children}
+10
+</UserContext.Provider>
+11
+);
+12
+};
+13
+14
+export const useUser = () => useContext(UserContext);
+15
+╔tape 2 : Wrapper lÆapplication
+<UserProvider>
+1
+<App />
+2
+</UserProvider>
+3
+╔tape 3 : Utiliser
+function UserMenu() {
+1
+const { username } = useUser() ;
+2
+return <div>Bonjour {username} !</div>;
+3
+}
+4
+2.3 Solution 2 : Redux Toolkit
+CrΘer un Slice
+import { createSlice } from Æ@reduxjs/toolkitÆ;
+1
+2
+const userSlice = createSlice({
+3
+name: ÆuserÆ,
+4
+initialState : { username: ÆAliceÆ },
+5
+reducers : {
+6
+setUsername: (state , action) => {
+7
+state .username = action .payload;
+8
+}
+9
+}
+10
+});
+11
+12
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 8 : Gestion dÆ╔tat Globale
+export const { setUsername } = userSlice . actions ;
+13
+export default userSlice . reducer ;
+14
+Utiliser
+const username = useSelector(state => state . user .username);
+1
+const dispatch = useDispatch() ;
+2
+dispatch(setUsername(ÆBobÆ));
+3
+2.4 Solution 3 : Zustand
+CrΘer le Store
+import { create } from ÆzustandÆ;
+1
+2
+const useUserStore = create (( set) => ({
+3
+username: ÆAliceÆ,
+4
+setUsername: (name) => set({ username: name })
+5
+}));
+6
+7
+export default useUserStore ;
+8
+Utiliser (pas de Provider!)
+const username = useUserStore(state => state .username);
+1
+const setUsername = useUserStore(state => state .setUsername);
+2
+5
+
+--- Page 6 ---
+Error reading MERN1 (5).pdf: 'charmap' codec can't encode character '\u2217' in position 766: character maps to <undefined>
+
+================================================================================
+FILE: MERN1 (6).pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 9
+React Router & Authentification JWT
+Navigation et SΘcuritΘ dans une Application React
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+8 novembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques 3
+2 Partie 1 : Concepts Fondamentaux (40 min) 3
+2.1 React Router : Navigation dans React . . . . . . . . . . . . . . . . . . . . 3
+2.1.1 Pourquoi React Router? . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.2 Installation et Configuration . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.3 Les Composants Essentiels . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 JWT : Authentification avec JSON Web Token . . . . . . . . . . . . . . . 5
+2.2.1 QuÆest-ce quÆun JWT? . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2.2 Flux dÆAuthentification . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2.3 Stockage du Token . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.3 Routes ProtΘgΘes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3 Partie 2 : Ajout de lÆAuthentification au Backend (15 min) 7
+3.1 Installation des DΘpendances Backend . . . . . . . . . . . . . . . . . . . . 7
+3.2 Mise α Jour du ModΦle User . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.3 Routes dÆAuthentification . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.4 Middleware de Protection . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.5 Utilisation du Middleware . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.6 Fichier .env . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.7 Enregistrement des Routes . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4 Partie 3 : Application React ComplΦte (2h) 12
+4.1 Structure du Projet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.2 Configuration Axios . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.3 Context dÆAuthentification . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+4.4 Wrapper lÆApplication . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.5 Configuration des Routes . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.6 Les Composants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.6.1 Navbar . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+
+--- Page 2 ---
+Cours MERN - Semaine 9 : React Router & Authentification JWT
+4.6.2 ProtectedRoute . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.7 Les Pages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+4.7.1 Page de Connexion . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+4.7.2 Page dÆInscription . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+4.7.3 Page des Cours . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+4.7.4 Page DΘtails dÆun Cours . . . . . . . . . . . . . . . . . . . . . . . . 24
+4.7.5 Page Profil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5 Points Importants α Retenir 29
+6 Travail α Rendre 29
+7 Ressources 30
+2
+
+--- Page 3 ---
+Error reading MERN1 (6).pdf: 'charmap' codec can't encode character '\u2192' in position 1107: character maps to <undefined>
+
+================================================================================
+FILE: MERN1 (8).pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 7
+Maεtriser les Hooks Essentiels React
+useState, useEffect et useReducer
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+8 novembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques 2
+2 Partie 1 : Concepts Essentiels (30 min) 2
+2.1 Hook 1 : useState - Ajouter de la mΘmoire . . . . . . . . . . . . . . . . . . 2
+2.1.1 LÆImmutabilitΘ : La RΦgle dÆOr . . . . . . . . . . . . . . . . . . . . 2
+2.2 Hook 2 : useEffect - Les effets de bord . . . . . . . . . . . . . . . . . . . . 3
+2.3 Hook 3 : useReducer - ╔tat complexe . . . . . . . . . . . . . . . . . . . . . 3
+3 Partie 2 : Projets Pratiques (2h30) 5
+3.1 Projet 1 : Gestionnaire de TΓches avec useReducer (45 min) . . . . . . . . 5
+3.1.1 ╔tape 1 : CrΘer le Reducer . . . . . . . . . . . . . . . . . . . . . . . 5
+3.1.2 ╔tape 2 : Le Composant Principal . . . . . . . . . . . . . . . . . . . 6
+3.2 Projet 2 : Liste de Courses avec Timer (45 min) . . . . . . . . . . . . . . . 11
+3.2.1 Code Complet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.3 Projet 3 : Blog Interactif avec Tri et Recherche (60 min) . . . . . . . . . . 18
+3.3.1 Code Complet de lÆApplication . . . . . . . . . . . . . . . . . . . . 18
+4 RΘcapitulatif et Concepts ClΘs 26
+5 Travail α Rendre 27
+6 Ressources 27
+6.1 Documentation Officielle . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+6.2 Outils . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+
+--- Page 2 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+1 Objectifs PΘdagogiques
+LÆobjectif central de cette sΘance est de maεtriser les trois hooks fondamentaux
+de React α travers des projets pratiques concrets.
+└ la fin de cette sΘance, vous serez capable de :
+ù Utiliser useState pour gΘrer lÆΘtat local simple et complexe
+ù Maεtriser useEffect pour les effets de bord (API, timers, localStorage)
+ù ImplΘmenter useReducer pour organiser la logique dÆΘtat complexe
+ù Appliquer lÆimmutabilitΘ correctement dans toutes les mises α jour dÆΘtat
+ù CrΘer des applications interactives complΦtes avec persistance de donnΘes
+2 Partie 1 : Concepts Essentiels (30 min)
+2.1 Hook 1 : useState - Ajouter de la mΘmoire
+useState permet dÆajouter de lÆΘtat α un composant fonctionnel. React conserve cet
+Θtat entre les rendus.
+Syntaxe de base :
+const [ state , setState ] = useState(initialValue);
+1
+2
+// Exemples
+3
+const [count , setCount] = useState(0) ;
+4
+const [name, setName] = useState(ÆÆ);
+5
+const [items , setItems ] = useState ([]) ;
+6
+const [user , setUser ] = useState({ name: ÆÆ, age: 0 });
+7
+2.1.1 LÆImmutabilitΘ : La RΦgle dÆOr
+En React, lÆΘtat ne doit jamais Ωtre modifiΘ directement.
+INCORRECT - Mutation directe :
+// Objets
+1
+user .name = "Bob";
+2
+setUser(user); // React ne dΘtecte pas le changement
+3
+4
+// Tableaux
+5
+items.push(newItem);
+6
+setItems(items); // React ne dΘtecte pas le changement
+7
+CORRECT - ImmutabilitΘ :
+// Objets
+1
+setUser ({... user , name: "Bob"}); // Nouvel objet
+2
+3
+// Tableaux
+4
+setItems ([... items , newItem]) ; // Nouveau tableau
+5
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+OpΘrations immutables sur les tableaux :
+OpΘration MΘthode immutable
+Ajouter [...arr, newItem]
+Supprimer arr.filter((_,i) => i !== index)
+Modifier arr.map((item,i) => i === index ? newItem : item)
+2.2 Hook 2 : useEffect - Les effets de bord
+useEffect permet dÆexΘcuter du code aprΦs le rendu pour synchroniser avec des sys-
+tΦmes externes.
+Syntaxe :
+useEffect (() => {
+1
+// Code α exΘcuter
+2
+3
+return () => {
+4
+// Nettoyage (optionnel)
+5
+};
+6
+}, [ dependencies ]) ;
+7
+Les trois cas dÆusage :
+1. Une seule fois au montage : useEffect(() => {...}, [])
+2. Quand une valeur change : useEffect(() => {...}, [value])
+3. └ chaque rendu : useEffect(() => {...}) (rarement utilisΘ)
+Exemples courants :
+ù Charger des donnΘes depuis une API
+ù CrΘer un timer ou intervalle
+ù Sauvegarder dans localStorage
+ù SÆabonner α des ΘvΘnements
+2.3 Hook 3 : useReducer - ╔tat complexe
+Quand lÆΘtat devient complexe (plusieurs sous-valeurs liΘes), useReducer offre une
+meilleure organisation.
+Syntaxe :
+const [ state , dispatch ] = useReducer(reducer , initialState );
+1
+2
+// Fonction reducer
+3
+function reducer(state , action) {
+4
+switch (action .type) {
+5
+case ÆACTION_NAMEÆ:
+6
+return {... state , /* modifications */};
+7
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+default :
+8
+return state ;
+9
+}
+10
+}
+11
+12
+// Utilisation
+13
+dispatch({ type: ÆACTION_NAMEÆ, payload: value });
+14
+Quand utiliser useReducer?
+ù Plusieurs sous-valeurs dÆΘtat liΘes
+ù Logique de mise α jour complexe
+ù Transitions dÆΘtat multiples
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+3 Partie 2 : Projets Pratiques (2h30)
+3.1 Projet 1 : Gestionnaire de TΓches avec useReducer (45 min)
+Objectif : CrΘer une Todo List complΦte utilisant useReducer pour gΘrer lÆΘtat.
+FonctionnalitΘs :
+ù Ajouter des tΓches
+ù Marquer comme complΘtΘes
+ù Supprimer des tΓches
+ù Filtrer (toutes / actives / complΘtΘes)
+ù Persistance avec localStorage
+3.1.1 ╔tape 1 : CrΘer le Reducer
+export const initialState = {
+1
+todos: [] ,
+2
+filter : ÆallÆ // ÆallÆ, ÆactiveÆ, ÆcompletedÆ
+3
+};
+4
+5
+export function todoReducer(state , action) {
+6
+switch (action .type) {
+7
+case ÆADD_TODOÆ:
+8
+return {
+9
+... state ,
+10
+todos: [
+11
+{
+12
+id : Date.now() ,
+13
+text : action .payload ,
+14
+completed: false ,
+15
+createdAt: new Date() .toISOString()
+16
+},
+17
+... state .todos
+18
+]
+19
+};
+20
+21
+case ÆTOGGLE_TODOÆ:
+22
+return {
+23
+... state ,
+24
+todos: state .todos.map(todo =>
+25
+todo. id === action .payload
+26
+? {... todo , completed: !todo.completed}
+27
+: todo
+28
+)
+29
+};
+30
+31
+case ÆDELETE_TODOÆ:
+32
+return {
+33
+... state ,
+34
+todos: state .todos. filter (todo =>
+35
+5
+
+--- Page 6 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+todo. id !== action .payload
+36
+)
+37
+};
+38
+39
+case ÆSET_FILTERÆ:
+40
+return {
+41
+... state ,
+42
+filter : action .payload
+43
+};
+44
+45
+case ÆLOAD_TODOSÆ:
+46
+return {
+47
+... state ,
+48
+todos: action .payload
+49
+};
+50
+51
+default :
+52
+return state ;
+53
+}
+54
+}
+55
+Listing 1 û src/reducers/todoReducer.js
+3.1.2 ╔tape 2 : Le Composant Principal
+import { useReducer , useState , useEffect } from ÆreactÆ;
+1
+import { todoReducer , initialState } from Æ./reducers/todoReducerÆ;
+2
+3
+function App() {
+4
+const [ state , dispatch ] = useReducer(todoReducer , initialState );
+5
+const [input , setInput ] = useState(ÆÆ);
+6
+7
+// Charger depuis localStorage au montage
+8
+useEffect (() => {
+9
+const saved = localStorage .getItem(ÆtodosÆ);
+10
+if (saved) {
+11
+dispatch({
+12
+type: ÆLOAD_TODOSÆ,
+13
+payload: JSON. parse(saved)
+14
+});
+15
+}
+16
+}, []) ;
+17
+18
+// Sauvegarder dans localStorage α chaque modification
+19
+useEffect (() => {
+20
+if (state .todos. length > 0) {
+21
+localStorage . setItem(ÆtodosÆ, JSON. stringify (state .todos)
+22
+);
+}
+23
+}, [ state .todos ]) ;
+24
+25
+6
+
+--- Page 7 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+const addTodo = () => {
+26
+if (input.trim()) {
+27
+dispatch({ type: ÆADD_TODOÆ, payload: input });
+28
+setInput(ÆÆ);
+29
+}
+30
+};
+31
+32
+// Filtrer les todos
+33
+const filteredTodos = state .todos. filter (todo => {
+34
+if (state . filter === ÆactiveÆ) return !todo.completed;
+35
+if (state . filter === ÆcompletedÆ) return todo.completed;
+36
+return true ;
+37
+});
+38
+39
+return (
+40
+<div style={{
+41
+maxWidth: Æ600pxÆ,
+42
+margin: Æ50px autoÆ,
+43
+padding: Æ20pxÆ,
+44
+fontFamily: ÆArial, sans-serifÆ
+45
+}}>
+46
+<h1 style={{ textAlign : ÆcenterÆ, color : Æ#2c3e50Æ }}>
+47
+Ma Todo List
+48
+</h1>
+49
+50
+{/* Formulaire dÆajout */}
+51
+<div style={{
+52
+display : ÆflexÆ,
+53
+gap: Æ10pxÆ,
+54
+marginBottom: Æ20pxÆ
+55
+}}>
+56
+<input
+57
+type="text"
+58
+value={input}
+59
+onChange={(e) => setInput(e. target . value)}
+60
+onKeyPress={(e) => e.key === ÆEnterÆ && addTodo()
+61
+}
+placeholder="Nouvelle tΓche..."
+62
+style={{
+63
+flex : 1,
+64
+padding: Æ12pxÆ,
+65
+fontSize : Æ16pxÆ,
+66
+border: Æ2px solid #dddÆ,
+67
+borderRadius: Æ5pxÆ
+68
+}}
+69
+/>
+70
+<button
+71
+onClick={addTodo}
+72
+style={{
+73
+padding: Æ12px 24pxÆ,
+74
+backgroundColor: Æ#27ae60Æ,
+75
+7
+
+--- Page 8 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+color : ÆwhiteÆ,
+76
+border: ÆnoneÆ,
+77
+borderRadius: Æ5pxÆ,
+78
+cursor : ÆpointerÆ,
+79
+fontSize : Æ16pxÆ,
+80
+fontWeight: ÆboldÆ
+81
+}}
+82
+>
+83
+Ajouter
+84
+</button>
+85
+</div>
+86
+87
+{/* Filtres */}
+88
+<div style={{
+89
+display : ÆflexÆ,
+90
+gap: Æ10pxÆ,
+91
+marginBottom: Æ20pxÆ,
+92
+justifyContent : ÆcenterÆ
+93
+}}>
+94
+{[ÆallÆ, ÆactiveÆ, ÆcompletedÆ].map( filter => (
+95
+<button
+96
+key={filter}
+97
+onClick={() => dispatch({
+98
+type: ÆSET_FILTERÆ,
+99
+payload: filter
+100
+})}
+101
+style={{
+102
+padding: Æ8px 16pxÆ,
+103
+backgroundColor: state . filter === filter
+104
+? Æ#3498dbÆ
+105
+: Æ#ecf0f1Æ,
+106
+color : state . filter === filter
+107
+? ÆwhiteÆ
+108
+: Æ#2c3e50Æ,
+109
+border: ÆnoneÆ,
+110
+borderRadius: Æ5pxÆ,
+111
+cursor : ÆpointerÆ,
+112
+fontWeight: state . filter === filter
+113
+? ÆboldÆ
+114
+: ÆnormalÆ
+115
+}}
+116
+>
+117
+{filter === ÆallÆ ? ÆToutesÆ :
+118
+filter === ÆactiveÆ ? ÆActivesÆ : ÆComplΘtΘ
+119
+esÆ}
+</button>
+120
+))}
+121
+</div>
+122
+123
+{/* Liste des tΓches */}
+124
+<div>
+125
+8
+
+--- Page 9 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+{filteredTodos . length === 0 ? (
+126
+<p style={{
+127
+textAlign : ÆcenterÆ,
+128
+color : Æ#95a5a6Æ,
+129
+padding: Æ40pxÆ
+130
+}}>
+131
+Aucune tΓche α afficher
+132
+</p>
+133
+) : (
+134
+filteredTodos .map(todo => (
+135
+<div
+136
+key={todo. id}
+137
+style={{
+138
+display : ÆflexÆ,
+139
+alignItems : ÆcenterÆ,
+140
+padding: Æ15pxÆ,
+141
+marginBottom: Æ10pxÆ,
+142
+backgroundColor: todo.completed
+143
+? Æ#d5f4e6Æ
+144
+: ÆwhiteÆ,
+145
+border: Æ1px solid #dddÆ,
+146
+borderRadius: Æ5pxÆ
+147
+}}
+148
+>
+149
+<input
+150
+type="checkbox"
+151
+checked={todo.completed}
+152
+onChange={() => dispatch({
+153
+type: ÆTOGGLE_TODOÆ,
+154
+payload: todo. id
+155
+})}
+156
+style={{
+157
+marginRight: Æ15pxÆ,
+158
+width: Æ20pxÆ,
+159
+height : Æ20pxÆ,
+160
+cursor : ÆpointerÆ
+161
+}}
+162
+/>
+163
+<span style={{
+164
+flex : 1,
+165
+fontSize : Æ16pxÆ,
+166
+textDecoration : todo.completed
+167
+? Æline-throughÆ
+168
+: ÆnoneÆ,
+169
+color : todo.completed
+170
+? Æ#95a5a6Æ
+171
+: Æ#2c3e50Æ
+172
+}}>
+173
+{todo. text}
+174
+</span>
+175
+<button
+176
+9
+
+--- Page 10 ---
+Cours MERN - Semaine 7 : useState, useEffect & useReducer
+onClick={() => dispatch({
+177
+type: ÆDELETE_TODOÆ,
+178
+payload: todo. id
+179
+})}
+180
+style={{
+181
+padding: Æ6px 12pxÆ,
+182
+backgroundColor: Æ#e74c3cÆ,
+183
+color : ÆwhiteÆ,
+184
+border: ÆnoneÆ,
+185
+borderRadius: Æ3pxÆ,
+186
+cursor : ÆpointerÆ
+187
+}}
+188
+>
+189
+Supprimer
+190
+</button>
+191
+</div>
+192
+))
+193
+)}
+194
+</div>
+195
+196
+{/* Statistiques */}
+197
+<div style={{
+198
+marginTop: Æ20pxÆ,
+199
+textAlign : ÆcenterÆ,
+200
+padding: Æ15pxÆ,
+201
+backgroundColor: Æ#ecf0f1Æ,
+202
+borderRadius: Æ5pxÆ
+203
+}}>
+204
+<strong>Total :</strong> {state .todos. length} |
+205
+<strong> ComplΘtΘes :</strong> {
+206
+state .todos. filter (t => t.completed). length
+207
+}
+208
+</div>
+209
+</div>
+210
+);
+211
+}
+212
+213
+export default App;
+214
+Listing 2 û src/App.jsx
+Points clΘs de ce projet :
+ù useReducer centralise toute la logique dÆΘtat
+ù useEffect gΦre la persistance localStorage
+ù useState pour lÆinput du formulaire
+ù ImmutabilitΘ respectΘe dans tous les cas du reducer
+10
+
+--- Page 11 ---
+Error reading MERN1 (8).pdf: 'charmap' codec can't encode character '\u2212' in position 1461: character maps to <undefined>
+
+================================================================================
+FILE: MERN1 S6.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 6
+Introduction α React et Vite
+Composants, JSX et Props
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+27 octobre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques 3
+2 Partie 1 : Concepts ThΘoriques (1h30) 3
+2.1 Single Page Application (SPA) . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.1 Application Multi-Pages Traditionnelle . . . . . . . . . . . . . . . . 3
+2.1.2 Single Page Application (SPA) . . . . . . . . . . . . . . . . . . . . . 3
+2.2 React : La BibliothΦque UI . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2.1 QuÆest-ce que React? . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2.2 La Philosophie des Composants . . . . . . . . . . . . . . . . . . . . 4
+2.3 Le JSX : JavaScript + XML . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3.1 QuÆest-ce que le JSX? . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3.2 RΦgles Fondamentales du JSX . . . . . . . . . . . . . . . . . . . . . 4
+2.4 Les Props : Communication entre Composants . . . . . . . . . . . . . . . . 6
+2.4.1 Concept . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.4.2 DΘstructuration des Props . . . . . . . . . . . . . . . . . . . . . . . 6
+2.4.3 Props avec Valeurs par DΘfaut . . . . . . . . . . . . . . . . . . . . . 7
+2.5 Afficher des Listes avec .map() . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.6 Vite : LÆOutil de Build Rapide . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.6.1 Pourquoi Vite? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3 Partie 2 : Atelier Pratique (1h30) 9
+3.1 ╔tape 1 : CrΘer le Projet avec Vite . . . . . . . . . . . . . . . . . . . . . . 9
+3.2 ╔tape 2 : Nettoyer et Comprendre la Structure . . . . . . . . . . . . . . . . 9
+3.3 ╔tape 3 : CrΘer le Premier Composant . . . . . . . . . . . . . . . . . . . . 9
+3.4 ╔tape 4 : CrΘer un Composant Article . . . . . . . . . . . . . . . . . . . . 10
+3.5 ╔tape 5 : Utiliser le Composant dans App . . . . . . . . . . . . . . . . . . 10
+3.6 ╔tape 6 : Afficher une Liste dÆArticles . . . . . . . . . . . . . . . . . . . . . 11
+3.7 ╔tape 7 : CrΘer un Composant Header . . . . . . . . . . . . . . . . . . . . 12
+3.8 ╔tape 8 : CrΘer un Composant Footer . . . . . . . . . . . . . . . . . . . . . 12
+3.9 ╔tape 9 : Application Finale ComplΦte . . . . . . . . . . . . . . . . . . . . 13
+
+--- Page 2 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+4 Concepts ClΘs α Retenir 14
+5 Exercices Pratiques 15
+6 Conclusion 16
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+1 Objectifs PΘdagogiques
+└ la fin de cette sΘance, vous serez capable de :
+ù Comprendre la diffΘrence entre une application multi-pages (MPA) et une Single
+Page Application (SPA)
+ù Expliquer ce quÆest React et son r⌠le dans le dΘveloppement frontend
+ù Maεtriser la syntaxe JSX et ses rΦgles fondamentales
+ù CrΘer des composants React fonctionnels rΘutilisables
+ù Utiliser les props pour transmettre des donnΘes entre composants
+ù Initialiser un projet React moderne avec Vite
+ù Afficher des listes de donnΘes avec la mΘthode .map()
+ù Structurer une application React selon les bonnes pratiques
+2 Partie 1 : Concepts ThΘoriques (1h30)
+2.1 Single Page Application (SPA)
+2.1.1 Application Multi-Pages Traditionnelle
+Dans une application web traditionnelle :
+1. LÆutilisateur clique sur un lien
+2. Le navigateur charge une nouvelle page HTML complΦte depuis le serveur
+3. Tout le contenu (header, footer, etc.) est rechargΘ
+4. LÆΘcran "clignote" pendant le chargement
+ProblΦmes :
+ù Lent (requΩte rΘseau α chaque clic)
+ù ExpΘrience utilisateur saccadΘe
+ù Duplication du code (header/footer rechargΘs α chaque fois)
+2.1.2 Single Page Application (SPA)
+React permet de crΘer des SPAs o∙ :
+ù Une seule page HTML est chargΘe au dΘpart
+ù JavaScript gΘnΦre et met α jour le contenu dynamiquement
+ù Pas de rechargement complet de la page
+ù Navigation fluide et rapide
+Analogie : Imaginez un livre avec une seule page magique qui change son contenu
+au lieu de tourner physiquement les pages. CÆest le principe dÆune SPA!
+2.2 React : La BibliothΦque UI
+2.2.1 QuÆest-ce que React?
+ReactestunebibliothΦqueJavaScriptdΘveloppΘeparFacebook(Meta)pourconstruire
+des interfaces utilisateur.
+CaractΘristiques :
+ù DΘclaratif : On dΘcrit QUOI afficher, pas COMMENT
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+ù BasΘ sur les composants : LÆinterface est divisΘe en morceaux rΘutilisables
+ù Learn Once, Write Anywhere : Peut Ωtre utilisΘ pour web, mobile (React Na-
+tive), desktop
+2.2.2 La Philosophie des Composants
+Un composant est une fonction JavaScript qui retourne du JSX (ce qui doit sÆafficher).
+Principe : Diviser une interface complexe en petits morceaux indΘpendants.
+function Greeting() {
+1
+return <h1>Bonjour le monde !</h1>;
+2
+}
+3
+Listing 1 û Un composant simple
+Analogie : Si votre interface est une maison, les composants sont les briques. Chaque
+brique a un r⌠le prΘcis et peut Ωtre rΘutilisΘe.
+2.3 Le JSX : JavaScript + XML
+2.3.1 QuÆest-ce que le JSX?
+JSX (JavaScript XML) est une extension syntaxique qui ressemble α du HTML mais
+qui est en fait du JavaScript.
+Important : Le JSX nÆest PAS du HTML! CÆest une syntaxe spΘciale qui sera
+transformΘe en JavaScript par Vite.
+// Ce que vous Θcrivez (JSX)
+1
+const element = <h1>Hello</h1>;
+2
+3
+// Ce que Vite/Babel transforme (JavaScript)
+4
+const element = React.createElement(Æh1Æ, null , ÆHelloÆ);
+5
+Listing 2 û Transformation JSX
+2.3.2 RΦgles Fondamentales du JSX
+1. Un seul ΘlΘment racine
+// ERREUR - Plusieurs racines
+1
+function Wrong() {
+2
+return (
+3
+<h1>Titre</h1>
+4
+<p>Paragraphe</p>
+5
+);
+6
+}
+7
+8
+// CORRECT - EnveloppΘ dans une div
+9
+function Correct() {
+10
+return (
+11
+<div>
+12
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+<h1>Titre</h1>
+13
+<p>Paragraphe</p>
+14
+</div>
+15
+);
+16
+}
+17
+18
+// CORRECT - Fragment (pas de div supplΘmentaire)
+19
+function BetterWay() {
+20
+return (
+21
+<>
+22
+<h1>Titre</h1>
+23
+<p>Paragraphe</p>
+24
+</>
+25
+);
+26
+}
+27
+2. Attributs en camelCase
+// HTML traditionnel
+1
+<div class="container" onclick="handleClick()">
+2
+<label for="name">Nom</label>
+3
+</div>
+4
+5
+// JSX (camelCase)
+6
+<div className="container" onClick={handleClick}>
+7
+<label htmlFor="name">Nom</label>
+8
+</div>
+9
+Pourquoi? Parce que class et for sont des mots rΘservΘs en JavaScript!
+3. Expressions JavaScript entre accolades
+function UserCard() {
+1
+const name = "Alice";
+2
+const age = 25;
+3
+const isAdmin = true ;
+4
+5
+return (
+6
+<div>
+7
+{/* Variable */}
+8
+<h1>{name}</h1>
+9
+10
+{/* Expression */}
+11
+<p>Age dans 5 ans : {age + 5}</p>
+12
+13
+{/* Condition ternaire */}
+14
+<span>{isAdmin ? "Admin" : "User"}</span>
+15
+16
+{/* Condition avec && */}
+17
+{isAdmin && <button>Panneau Admin</button>}
+18
+19
+{/* Fonction */}
+20
+<p>{name.toUpperCase()}</p>
+21
+</div>
+22
+);
+23
+5
+
+--- Page 6 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+}
+24
+Listing 3 û Utilisation des accolades
+4. Fermeture obligatoire des balises
+// HTML valide mais JSX invalide
+1
+<input type="text">
+2
+<img src="photo.jpg">
+3
+4
+// JSX - Balises auto-fermantes
+5
+<input type="text" />
+6
+<img src="photo.jpg" />
+7
+2.4 Les Props : Communication entre Composants
+2.4.1 Concept
+Les props (properties) permettent de passer des donnΘes dÆun composant parent α un
+composant enfant.
+Analogie : CÆest comme passer des paramΦtres α une fonction.
+// Composant Parent
+1
+function App() {
+2
+return (
+3
+<div>
+4
+<WelcomeMessage name="Alice" age={25} />
+5
+<WelcomeMessage name="Bob" age={30} />
+6
+</div>
+7
+);
+8
+}
+9
+10
+// Composant Enfant
+11
+function WelcomeMessage(props) {
+12
+return (
+13
+<div>
+14
+<h2>Bienvenue {props.name} !</h2>
+15
+<p>Vous avez {props.age} ans</p>
+16
+</div>
+17
+);
+18
+}
+19
+Listing 4 û Passage et utilisation de props
+2.4.2 DΘstructuration des Props
+Pour un code plus lisible, on peut dΘstructurer les props :
+// Avec props
+1
+function UserCard(props) {
+2
+return <h1>{props.name}</h1>;
+3
+}
+4
+5
+// Avec dΘstructuration (recommandΘ)
+6
+6
+
+--- Page 7 ---
+Cours MERN - Semaine 6 : Introduction α React et Vite
+function UserCard({ name, age , job }) {
+7
+return (
+8
+<div>
+9
+<h1>{name}</h1>
+10
+<p>Age : {age}</p>
+11
+<p>MΘtier : {job}</p>
+12
+</div>
+13
+);
+14
+}
+15
+2.4.3 Props avec Valeurs par DΘfaut
+function Button({ text = "Cliquer", color = "blue" }) {
+1
+return (
+2
+<button style={{ backgroundColor: color }}>
+3
+{text}
+4
+</button>
+5
+);
+6
+}
+7
+8
+// Utilisation
+9
+<Button text="Envoyer" color="green" />
+10
+<Button /> {/* Utilisera "Cliquer" et "blue" */}
+11
+Listing 5 û Valeurs par dΘfaut
+RΦgle importante : Les props sont en lecture seule. Un composant enfant ne
+peut jamais modifier ses props. Les donnΘes vont toujours du parent vers lÆenfant
+(flux unidirectionnel).
+2.5 Afficher des Listes avec .map()
+Pour afficher une liste dÆΘlΘments, on utilise la mΘthode .map() de JavaScript :
+function StudentList() {
+1
+const students = [
+2
+{ id : 1, name: "Alice", grade: 18 },
+3
+{ id : 2, name: "Bob", grade: 15 },
+4
+{ id : 3, name: "Charlie", grade: 16 }
+5
+];
+6
+7
+return (
+8
+<ul>
+9
+{students .map((student) => (
+10
+<li key={student. id}>
+11
+{student.name} : {student.grade}/20
+12
+</li>
+13
+))}
+14
+</ul>
+15
+);
+16
+7
+
+--- Page 8 ---
+Error reading MERN1 S6.pdf: 'charmap' codec can't encode character '\u2192' in position 1100: character maps to <undefined>
+
+================================================================================
+FILE: MERN2.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 2
+Structuration de lÆAPI : Routes et Contr⌠leurs
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+24 septembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques DΘtaillΘs 2
+2 Partie 1 : Concepts Architecturaux et Techniques (1h15) 2
+2.1 Le ProblΦme : Le Fichier Monolithique . . . . . . . . . . . . . . . . . . . . 2
+2.2 La Solution : SΘparation des PrΘoccupations (SoC) . . . . . . . . . . . . . 2
+2.3 LÆOutil ClΘ : express.Router() . . . . . . . . . . . . . . . . . . . . . . . . 3
+3 Partie 2 : Atelier Pratique - Refactorisation (1h45) 4
+3.1 ╔tape 1 : PrΘparation de lÆArchitecture . . . . . . . . . . . . . . . . . . . . 4
+3.2 ╔tape 2 : CrΘation du Contr⌠leur dÆArticles . . . . . . . . . . . . . . . . . 4
+3.3 ╔tape 3 : CrΘation du Routeur dÆArticles . . . . . . . . . . . . . . . . . . . 5
+3.4 ╔tape 4 : Mettre α jour le Serveur Principal . . . . . . . . . . . . . . . . . 5
+3.5 ╔tape 5 : Validation avec Postman . . . . . . . . . . . . . . . . . . . . . . 6
+4 Conclusion et Vision pour la Suite 6
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtudiant) 7
+
+--- Page 2 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+1 Objectifs PΘdagogiques DΘtaillΘs
+Cette semaine, nous passons dÆun simple serveur α une vΘritable architecture dÆAPI.
+└ la fin de cette session, vous serez capable de :
+ù Expliquer les limites dÆun fichier serveur monolithique et lÆimportance de la SΘpa-
+ration des PrΘoccupations (SoC).
+ù DΘfinir prΘcisΘment le r⌠le dÆun routeur et dÆun contr⌠leur dans une architecture
+Express.
+ù Utiliser lÆobjet express.Router() pour crΘer des modules de routes encapsulΘs.
+ù CrΘer un fichier de contr⌠leurs contenant la logique mΘtier sous forme de fonctions
+exportΘes.
+ù Connecter les routes aux fonctions de leurs contr⌠leurs respectifs.
+ù Restructurer (refactoriser) une application Express existante pour adopter cette
+nouvelle architecture.
+ù IntΘgrer les modules de routes dans lÆapplication principale server.js en utilisant
+app.use().
+ù Valider avec Postman que lÆAPI reste fonctionnelle aprΦs la restructuration.
+2 Partie 1 : Concepts Architecturaux et Techniques
+(1h15)
+2.1 Le ProblΦme : Le Fichier Monolithique
+Lors de la premiΦre sΘance, nous avons crΘΘ un fichier æserver.jsæ fonctionnel. CÆest
+parfait pour dΘmarrer, mais imaginez une application rΘelle avec des dizaines, voire des
+centaines de routes (pour les articles, les utilisateurs, les commentaires, les catΘgories,
+etc.). Le fichier æserver.jsæ deviendrait rapidement :
+ù Illisible : Des milliers de lignes de code sans organisation claire.
+ù Difficile α maintenir : Modifier une route pour les utilisateurs risquerait de casser
+quelque chose pour les articles.
+ù Non-collaboratif : Deux dΘveloppeurs ne pourraient pas travailler en mΩme temps
+sur les routes des articles et des utilisateurs sans conflits constants.
+Ce phΘnomΦne est souvent appelΘ "code spaghetti". Notre objectif est de transformer ce
+plat de spaghettis en une boεte de rangement bien organisΘe.
+2.2 La Solution : SΘparation des PrΘoccupations (SoC)
+Le principe de SoC, que nous avons introduit la semaine derniΦre, nous dicte la marche
+α suivre. Nous allons diviser notre code en fonction de ses responsabilitΘs.
+Architecture Cible : Notre application va dΘsormais avoir trois niveaux de respon-
+sabilitΘ distincts :
+1. Serveur (æserver.jsæ) : Le chef dÆorchestre. Son seul r⌠le est de dΘmarrer le
+serveur, de configurer les middlewares globaux (comme æexpress.json()æ) et de
+dΘlΘguer les requΩtes aux bons modules de routes.
+2. Routeur (æ/routes/*.jsæ) : LÆaiguilleur. Un fichier de routes ne sÆoccupe que
+de diriger le trafic. Il dit : "Si je reτois une requΩte GET sur lÆURL /, jÆappelle la
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+fonction getAllArticles du contr⌠leur."
+3. Contr⌠leur (æ/controllers/*.jsæ) : LÆouvrier spΘcialisΘ. Un fichier de contr⌠-
+leurs contient la logique mΘtier. CÆest lui qui fait le vrai travail : interroger la
+base de donnΘes, traiter les donnΘes, construire la rΘponse et lÆenvoyer.
+RΘponseHTTP
+RequΩte HTTP
+POST /api/articles
+server.js routes/articleRoutes.js controllers/articleController.js
+(Chef dÆorchestre) DΘlΘgation (Aiguilleur) Appel (Ouvrier spΘcialisΘ)
+app.use(Æ/api/articlesÆ, router.post(Æ/Æ, createArticle(req,
+...) ...) res)
+Figure 1 û Flux dÆune requΩte dans une architecture structurΘe.
+2.3 LÆOutil ClΘ : express.Router()
+Express nous fournit un outil puissant pour crΘer ces "aiguilleurs" : le routeur. Un
+express.Router() est une sorte de "mini-application" Express. On peut y attacher des
+routes et des middlewares, tout comme sur lÆobjet æappæ principal. LÆavantage est quÆon
+peut ensuite exporter ce routeur et lÆimporter dans notre application principale.
+Cela nous permet dÆencapsuler toute la logique de routage dÆune ressource (comme les
+articles) dans un seul fichier, le rendant modulaire et rΘutilisable.
+3
+
+--- Page 4 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+3 Partie 2 : Atelier Pratique - Refactorisation (1h45)
+Nous allons prendre notre projet de la Semaine 1 et le restructurer.
+3.1 ╔tape 1 : PrΘparation de lÆArchitecture
+1. Reprenez votre projet æmon-api-blogæ de la semaine derniΦre.
+2. └ la racine du projet, crΘez les deux dossiers nΘcessaires α notre nouvelle architec-
+ture :
+mkdir routes
+1
+mkdir controllers
+2
+3
+Listing 1 û CrΘation de la nouvelle arborescence
+3.2 ╔tape 2 : CrΘation du Contr⌠leur dÆArticles
+Commenτons par isoler la logique mΘtier.
+1. CrΘez un nouveau fichier : controllers/articleController.js.
+2. DΘplacez la logique. Coupez les fonctions de rappel (callbacks) de vos routes GET
+/api/test et POST /api/articles depuis æserver.jsæ et collez-les dans ce nouveau
+fichier.
+3. Transformez-les en fonctions nommΘes et exportΘes.
+// Pour lÆinstant, nous nÆavons pas de vraie logique, mais nous
+1
+prΘparons la structure.
+2
+// Controleur pour la route de test (anciennement GET /api/test)
+3
+const testApi = (req , res) => {
+4
+res . status(200) . json({ message: ÆLe test depuis le controleur
+5
+a fonctionnΘ !Æ, success : true });
+};
+6
+7
+// controleur pour crΘer un article (anciennement POST /api/
+8
+articles)
+const createArticle = (req , res) => {
+9
+const articleData = req.body;
+10
+console . log(ÆDonnΘes reτues par le controleur :Æ, articleData
+11
+);
+12
+res . status(201) . json({
+13
+message: ÆArticle crΘΘ avec succΦs via le controleur !Æ,
+14
+article : { id : Date.now() , ... articleData }
+15
+});
+16
+};
+17
+18
+// On exporte les fonctions pour pouvoir les utiliser dans nos
+19
+routes
+module. exports = {
+20
+testApi ,
+21
+createArticle
+22
+4
+
+--- Page 5 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+};
+23
+24
+Listing 2 û controllers/articleController.js
+3.3 ╔tape 3 : CrΘation du Routeur dÆArticles
+Maintenant, crΘons lÆaiguilleur qui utilisera ces fonctions.
+1. CrΘez un nouveau fichier : routes/articleRoutes.js.
+2. Dans ce fichier, nous allons :
+ù Importer Express et crΘer une instance de Router.
+ù Importer nos nouvelles fonctions depuis le contr⌠leur.
+ù DΘfinir nos routes sur le routeur, en les associant aux fonctions du contr⌠leur.
+ù Exporter le routeur.
+const express = require(ÆexpressÆ);
+1
+const router = express .Router() ;
+2
+3
+// On importe les fonctions du controleur
+4
+const { testApi , createArticle } = require(Æ../controllers/
+5
+articleControllerÆ);
+6
+// DΘfinition des routes
+7
+// Note : Le chemin Æ/Æ ici correspondra α la racine de ce que
+8
+nous dΘfinirons dans server.js
+9
+// Route GET pour /api/test (devient /test dans ce routeur)
+10
+router . get(Æ/testÆ, testApi);
+11
+12
+// Route POST pour /api/articles (devient / dans ce routeur)
+13
+router .post(Æ/Æ, createArticle);
+14
+15
+// On exporte le routeur pour lÆutiliser dans server.js
+16
+module. exports = router ;
+17
+18
+Listing 3 û routes/articleRoutes.js
+3.4 ╔tape 4 : Mettre α jour le Serveur Principal
+Il est temps de nettoyer æserver.jsæ et de le transformer en chef dÆorchestre.
+1. Ouvrez æserver.jsæ.
+2. Supprimez les anciennes dΘfinitions de routes (æapp.get(Æ/api/testÆ, ...)æ et
+æapp.post(Æ/api/articlesÆ, ...)æ).
+3. Importez votre nouveau routeur.
+4. Utilisez app.use()pourdireαExpressdÆutilisercerouteurpourtouteslesrequΩtes
+qui commencent par un certain chemin (par ex., /api/articles).
+const express = require(ÆexpressÆ);
+1
+const app = express() ;
+2
+const PORT = 3000;
+3
+4
+5
+
+--- Page 6 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+// On importe notre nouveau routeur
+5
+const articleRoutes = require(Æ./routes/articleRoutesÆ);
+6
+7
+// Middleware pour parser le JSON
+8
+app.use(express . json());
+9
+10
+// Route GET de base (reste ici car elle est gΘnΘrale)
+11
+app. get(Æ/Æ, (req , res) => {
+12
+res . status(200) .send(Æ<h1>Page d_accueil de notre API de Blog
+13
+!</h1>Æ);
+});
+14
+15
+// --- NOUVEAU : Utilisation du routeur ---
+16
+// Express utilisera le routeur ÆarticleRoutesÆ pour toute requΩ
+17
+te
+// commenτant par Æ/api/articlesÆ
+18
+app.use(Æ/api/articlesÆ, articleRoutes);
+19
+20
+app. listen (PORT, () => {
+21
+console . log(æServeur dΘmarrΘ sur http://localhost:${PORT}æ);
+22
+});
+23
+24
+Listing 4 û server.js - Version refactorisΘe
+Point ClΘ : Dans æserver.jsæ, on a æapp.use(Æ/api/articlesÆ, articleRoutes)æ. Dans
+æarticleRoutes.jsæ,onaærouter.post(Æ/Æ,createArticle)æ.Expresscombinelesdeux.
+Une requΩte POST vers /api/articles/ est donc bien dirigΘe vers la fonction
+æcreateArticleæ. De mΩme, une requΩte GET vers /api/articles/test est dirigΘe
+vers ætestApiæ.
+3.5 ╔tape 5 : Validation avec Postman
+La restructuration est terminΘe. Le plus important est de vΘrifier que rien nÆest cassΘ.
+1. Assurez-vous que votre serveur est lancΘ avec ænpm run devæ.
+2. Ouvrez Postman et rΘ-exΘcutez toutes les requΩtes de la Semaine 1 :
+ù GET http://localhost:3000/
+ù GET http://localhost:3000/api/articles/test(Attention,lÆURLachangΘ!)
+ù POST http://localhost:3000/api/articles
+3. Toutes les requΩtes doivent fonctionner exactement comme avant. Si cÆest
+le cas, notre refactorisation est un succΦs! LÆAPI externe nÆa pas changΘ, mais notre
+code interne est maintenant propre, organisΘ et prΩt α Θvoluer.
+4 Conclusion et Vision pour la Suite
+FΘlicitations! Vous avez accompli lÆune des Θtapes les plus importantes pour passer
+dÆun simple script α une application professionnelle. Votre API est maintenant structurΘe,
+maintenable et prΩte α accueillir de nouvelles fonctionnalitΘs sans devenir chaotique.
+6
+
+--- Page 7 ---
+Cours MERN - Semaine 2 : Structuration de lÆAPI
+La semaine prochaine, nous allons enfin nous connecter α une base de donnΘes. Nous
+introduirons MongoDB et Mongoose pour rendre nos donnΘes persistantes et transfor-
+mer notre API en une application dynamique et rΘelle.
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtu-
+diant)
+Appliquez la mΩme logique de structuration pour une nouvelle ressource : les utilisa-
+teurs.
+1. CrΘez un nouveau contr⌠leur : controllers/userController.js.
+ù CrΘez et exportez une fonction getAllUsers qui renvoie un tableau JSON
+dÆutilisateurs factices.
+ù CrΘez et exportez une fonction createUser qui renvoie un message de
+succΦs avec les donnΘes de æreq.bodyæ (similaire α æcreateArticleæ).
+2. CrΘez un nouveau routeur : routes/userRoutes.js.
+ù DΘfinissez une route GET / qui utilise getAllUsers.
+ù DΘfinissez une route POST / qui utilise createUser.
+3. Connectez le nouveau routeur dans æserver.jsæ. LÆapplication devra lÆutiliser
+pour toutes les requΩtes commenτant par /api/users.
+4. Testez vos nouvelles routes avec Postman :
+ù GET http://localhost:3000/api/users
+ù POST http://localhost:3000/api/users (avec un corps JSON appro-
+priΘ).
+Note Importante : Travail α
+Rendre
+Le compte rendu de cette semaine est crucial.
+Il doit non seulement dΘcrire les Θtapes de la refactorisation,
+mais aussi expliquer pourquoi cette nouvelle structure est
+meilleure que la prΘcΘdente. ╔chΘance : La soumission doit
+se faire au plus tard la veille de la prochaine sΘance, α 23h59
+prΘcises. Ce compte rendu est obligatoire et notΘ.
+7
+
+================================================================================
+FILE: MERN3.pdf
+================================================================================
+
+--- Page 1 ---
+Cours MERN - Semaine 3
+Persistance des DonnΘes : MongoDB, Mongoose et la
+Programmation Asynchrone
+Abdelweheb GUEDDES & Mohamed Ben Jazia / Ecole Polytechnique Sousse
+24 septembre 2025
+Table des matiΦres
+1 Objectifs PΘdagogiques DΘtaillΘs 2
+2 Partie 1 : Concepts Techniques Approfondis (1h30) 2
+2.1 Le Monde Asynchrone de Node.js . . . . . . . . . . . . . . . . . . . . . . . 2
+2.2 MongoDB et Mongoose : Explications DΘtaillΘes . . . . . . . . . . . . . . . 3
+3 Partie 2 : IntΘgration Pratique (1h30) 4
+3.1 ╔tape 1 : CrΘation du Cluster sur MongoDB Atlas . . . . . . . . . . . . . . 4
+3.2 ╔tape 2 : Installation et Configuration dans le Projet . . . . . . . . . . . . 4
+3.3 ╔tape 3 : CrΘation du ModΦle Article . . . . . . . . . . . . . . . . . . . . . 5
+3.4 ╔tape 4 : Mise α Jour des Contr⌠leurs avec async/await . . . . . . . . . . 6
+3.5 ╔tape 5 : Mise α Jour du Routeur . . . . . . . . . . . . . . . . . . . . . . . 7
+3.6 ╔tape 6 : Test Final avec Postman . . . . . . . . . . . . . . . . . . . . . . 8
+4 Conclusion et Vision pour la Suite 8
+5 Travail Pratique ComplΘmentaire (└ faire par lÆΘtudiant) 8
+
+--- Page 2 ---
+Cours MERN - Semaine 3 : IntΘgration de MongoDB et Mongoose
+1 Objectifs PΘdagogiques DΘtaillΘs
+└ la fin de cette sΘance, vous serez capable de :
+ù Expliquer les principes du NoSQL et les concepts fondamentaux de MongoDB
+(documents, collections).
+ù Maεtriser le concept de programmation asynchrone en JavaScript, des callbacks
+aux promesses et α la syntaxe async/await.
+ù Configurer un cluster sur MongoDB Atlas et connecter une application Node.js α
+celui-ci de maniΦre sΘcurisΘe.
+ù DΘfinir le r⌠le dÆun ODM comme Mongoose et son utilitΘ.
+ù Structurer des donnΘes en crΘant des SchΘmas et des ModΦles Mongoose avec
+validation.
+ù ImplΘmenter des opΘrations de base de donnΘes asynchrones dans les contr⌠leurs
+en utilisant async/await et la gestion dÆerreurs try...catch.
+ù IntΘgrer la logique de persistance pour crΘer et lire des donnΘes.
+2 Partie 1 : Concepts Techniques Approfondis (1h30)
+2.1 Le Monde Asynchrone de Node.js
+Toute interaction avec une base de donnΘes est une opΘration dÆEntrΘe/Sortie (I/O).
+Comme nous lÆavons vu, Node.js gΦre ces opΘrations de maniΦre asynchrone pour ne
+jamais bloquer le fil dÆexΘcution principal. GΘrer cet asynchronisme est au c£ur de notre
+mΘtier de dΘveloppeur back-end.
+Niveau 1 : Les Callbacks La mΘthode historique. On passe une fonction en argument
+qui sera exΘcutΘe une fois lÆopΘration terminΘe.
+database.query("SELECT * FROM users", function (err , results)
+1
+{
+if (err) { /* GΘrer lÆerreur */ }
+2
+// Faire quelque chose avec les ÆresultsÆ
+3
+});
+4
+5
+Listing 1 û Exemple avec un callback (style ancien)
+Le problΦme survient quand on enchaεne plusieurs opΘrations asynchrones, menant
+au fameux "Callback Hell" (lÆenfer des callbacks), un code indentΘ et difficile α
+lire.
+Niveau 2 : Les Promesses (Promises) UnepromesseestunobjetquireprΘsentelÆachΦ-
+vement (ou lÆΘchec) Θventuel dÆune opΘration asynchrone. Elle peut Ωtre dans lÆun
+de ces trois Θtats : en attente (pending), tenue (fulfilled), ou rompue (rejected). On
+peut enchaεner les opΘrations avec .then() et gΘrer les erreurs avec .catch().
+database.query("SELECT * FROM users")
+1
+.then(results => {
+2
+// Faire quelque chose avec les ÆresultsÆ
+3
+})
+4
+.catch(err => {
+5
+// GΘrer lÆerreur
+6
+});
+7
+2
+
+--- Page 3 ---
+Cours MERN - Semaine 3 : IntΘgration de MongoDB et Mongoose
+8
+Listing 2 û Exemple avec des promesses
+CÆest beaucoup plus propre, mais peut devenir lourd avec de longues chaεnes.
+Niveau 3 : async/await (Le Standard Moderne) CÆestdu"sucresyntaxique"au-dessus
+des promesses. Cela nous permet dÆΘcrire du code asynchrone qui ressemble α du
+code synchrone, le rendant infiniment plus lisible et facile α maintenir.
+Les deux rΦgles dÆor de async/await :
+1. Le mot-clΘ await ne peut Ωtre utilisΘ que α lÆintΘrieur dÆune fonction dΘclarΘe
+avec le mot-clΘ async.
+2. awaitmet"enpause"lÆexΘcutiondelafonctionasyncjusquÆαcequelapromesse
+soit rΘsolue (ou rejetΘe), sans pour autant bloquer le programme Node.js.
+TouteslesbibliothΦquesmodernes,ycomprisMongoose,sontbasΘessurlespromesses,
+cequilesrendparfaitementcompatiblesavecasync/await.CÆestlamΘthodequenous
+utiliserons.
+2.2 MongoDB et Mongoose : Explications DΘtaillΘes
+MongoDB estnotrelieudestockage.IlestorganisΘenbasesdedonnΘes,quicontiennent
+des collections. Une collection est un groupe de documents, et un document est
+un objet BSON (similaire α JSON) qui reprΘsente une seule entitΘ (un article, un
+utilisateur, etc.).
+Mongoose (lÆODM) est notre traducteur et notre garde-fou. Il se place entre notre
+application et MongoDB.
+ù Le SchΘma (Schema) : CÆest le plan de construction de nos documents. On
+y dΘfinit la structure attendue : les noms des champs (title, content), leur
+type (String, Number, Date), sÆils sont obligatoires (required: true), et des
+valeurs par dΘfaut (default: ...). CÆest une couche de validation essentielle
+pour garantir la cohΘrence de nos donnΘes.
+ù Le ModΦle (Model) : Une fois que nous avons un plan (le SchΘma), nous
+pouvons crΘer un ModΦle. Le ModΦle est un constructeur, une "usine" α docu-
+ments, compilΘe α partir de la dΘfinition du SchΘma. CÆest le ModΦle qui nous
+donne accΦs α toutes les mΘthodes pour interagir avec la base de donnΘes :
+Model.create(), Model.find(), Model.findById(), etc.
+3
+
+--- Page 4 ---
+Error reading MERN3.pdf: 'charmap' codec can't encode character '\u2193' in position 192: character maps to <undefined>
+
+================================================================================
+FILE: React_js_IsitCom 0.pdf
+================================================================================
+
+--- Page 1 ---
+React JS pour Master ISITCOM
+SΘance 0 : PrΘrequis et Mise en Place de lÆEnvironnement
+Dr . Abdelweheb GUEDDES
+29 septembre 2025
+
+--- Page 2 ---
+Table des matiΦres
+1 Introduction : Objectifs de la SΘance 0 3
+2 Rappels Fondamentaux (ThΘorie) 3
+2.1 Le JavaScript "Moderne" (ES6+) : Un PrΘrequis Non-NΘgociable . . . . . . . . . . . . 3
+2.1.1 Variables : let et const . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.2 Les Fonctions FlΘchΘes (Arrow Functions) . . . . . . . . . . . . . . . . . . . . . 3
+2.1.3 La DΘstructuration (Destructuring) . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.4 Modules : import et export . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.5 Autres Notions ClΘs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 La Manipulation du DOM : LÆAncienne vs. la Nouvelle Approche 6
+3.1 Le DOM : Document Object Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.2 LÆApproche ImpΘrative (JavaScript "Vanilla") . . . . . . . . . . . . . . . . . . . . . . . 6
+3.3 LÆApproche DΘclarative : La Promesse de React . . . . . . . . . . . . . . . . . . . . . . 7
+4 Mise en Place de lÆEnvironnement (Travaux Pratiques) 8
+4.1 Outils Indispensables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.1.1 Node.js et npm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.1.2 Un ╔diteur de Code : Visual Studio Code . . . . . . . . . . . . . . . . . . . . . 8
+4.1.3 Extensions VS Code RecommandΘes . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.2 VΘrification Finale de lÆInstallation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+5 Travail PrΘparatoire pour la SΘance 1 9
+2
+
+--- Page 3 ---
+1 Introduction : Objectifs de la SΘance 0
+BienvenuedanscetteformationReactJS!AvantdeplongerdanslÆΘcosystΦmeReact,ilestimpΘratif
+de sÆassurer que nous partageons tous un socle commun de connaissances et dÆoutils.
+Cette sΘance prΘliminaire a trois objectifs principaux :
+1. Valider les prΘrequisenJavaScriptmoderne(ES6+)quisontabsolumentessentielspourΘcrire
+du code React efficace.
+2. Comprendre le "Pourquoi" de React en analysant la manipulation traditionnelle du DOM
+et ses limites.
+3. Installer et configurer un environnement de dΘveloppement complet et fonctionnel sur vos
+machines.
+└ qui sÆadresse cette sΘance?
+CettesΘanceestunrappeletunemiseαniveau.NouspartonsduprincipequevousavezdΘjαdes
+bases solides en HTML, CSS et JavaScript. Si les concepts ci-dessous vous semblent totalement
+nouveaux, un travail personnel approfondi sera nΘcessaire pour suivre le reste de la formation.
+2 Rappels Fondamentaux (ThΘorie)
+2.1 Le JavaScript "Moderne" (ES6+) : Un PrΘrequis Non-NΘgociable
+React sÆappuie massivement sur les fonctionnalitΘs introduites depuis la version ES6 (ECMAScript
+2015) de JavaScript. Maεtriser les concepts suivants est indispensable.
+2.1.1 Variables : let et const
+Oubliez ævaræ. Utilisez æconstæ par dΘfaut pour les valeurs qui ne seront pas rΘassignΘes, et æletæ pour
+celles qui le seront. Cela amΘliore la prΘvisibilitΘ et la robustesse de votre code.
+2.1.2 Les Fonctions FlΘchΘes (Arrow Functions)
+Une syntaxe plus concise pour Θcrire des fonctions, qui rΘsout Θgalement les problΦmes de contexte
+de æthisæ.
+1 // Fonction classique
+2 function add(a, b) {
+3 return a + b;
+4 }
+5
+6 // Fonction flΘchΘe
+7 const addArrow = (a, b) => a + b;
+Listing 1 û Syntaxe classique vs. fonction flΘchΘe
+2.1.3 La DΘstructuration (Destructuring)
+Une maniΦre simple dÆextraire des valeurs dÆobjets ou de tableaux. Vous lÆutiliserez constamment
+avec les props et les hooks en React.
+1 // Pour un objet
+2 const person = { name: ÆAliceÆ, age: 25 };
+3 const { name, age } = person; // CrΘe les variables name et age
+4 console.log(name); // ÆAliceÆ
+5
+6 // Pour un tableau (trΦs utilisΘ avec le hook useState)
+7 const [first, second] = [ÆpommeÆ, ÆbananeÆ];
+8 console.log(first); // ÆpommeÆ
+Listing 2 û DΘstructuration dÆobjets et de tableaux
+3
+
+--- Page 4 ---
+2.1.4 Modules : import et export
+Le systΦme de modules ES6 est la base de lÆorganisation de tout projet React. Il permet de diviser
+le code en fichiers rΘutilisables.
+1 // Fichier: math.js
+2 export const PI = 3.14;
+3 export const add = (a, b) => a + b;
+4
+5 // Fichier: main.js
+6 import { PI, add } from Æ./math.jsÆ;
+7 console.log(add(PI, 10));
+Listing 3 û Exemple de modules
+2.1.5 Autres Notions ClΘs
+Assurez-vous dÆΩtre Θgalement α lÆaise avec les concepts suivants, qui sont omniprΘsents en React.
+ù Les Template Literals (chaεnes de caractΦres littΘrales)
+Introduites avec ES6, elles permettent de manipuler les chaεnes de caractΦres de maniΦre plus
+souple et lisible en utilisant des backticks (ô æ ô). Leurs deux avantages majeurs sont :
+1. LÆinterpolation facile de variables et dÆexpressions avec la syntaxe ${expression}.
+2. La crΘation de chaεnes de caractΦres sur plusieurs lignes sans avoir α utiliser lÆopΘrateur +.
+1 const user = { name: ÆAlexÆ, level: 10 };
+2
+3 // Avant (avec lÆopΘrateur +)
+4 const classicWelcome = ÆBienvenue, Æ + user.name + Æ !\nÆ +
+5 ÆVous etes au niveau Æ + user.level + Æ.Æ;
+6
+7 // Maintenant (avec les Template Literals)
+8 const modernWelcome = æBienvenue, ${user.name} !
+9 Vous etes au niveau ${user.level}.æ;
+10
+11 console.log(classicWelcome);
+12 console.log(modernWelcome); // Le resultat est identique, la syntaxe est plus
+propre.
+13
+Listing 4 û ConcatΘnation classique vs. Template Literals
+ù Les mΘthodes de tableau : .map(), .filter(), .reduce()
+Ces mΘthodes permettent de parcourir des tableaux de maniΦre dΘclarative, sans utiliser de
+boucles for classiques. Elles sont fondamentales en programmation fonctionnelle et donc en
+React.
+ù .map() : Transforme chaque ΘlΘment dÆun tableau et retourne un nouveau tableau de
+mΩme longueur avec les ΘlΘments transformΘs. CÆest la mΘthode la plus utilisΘe en React
+pour afficher des listes dÆΘlΘments.
+1 const numbers = [1, 2, 3, 4];
+2 const squares = numbers.map(num => num * num);
+3 // squares vaut maintenant [1, 4, 9, 16]
+4
+5 // En React, on lÆutilise pour transformer des donnees en elements JSX
+6 const fruits = [ÆpommeÆ, ÆbananeÆ, ÆfraiseÆ];
+7 const fruitListItems = fruits.map(fruit => æ<li key={fruit}>${fruit}</li>æ);
+8 // fruitListItems contient des elements de liste prets a etre affiches
+9
+Listing 5 û Utilisation de .map()
+ù .filter() : CrΘe un nouveau tableau contenant uniquement les ΘlΘments du tableau dÆori-
+gine qui passent un test (une fonction qui retourne true ou false).
+4
+
+--- Page 5 ---
+1 const products = [
+2 { name: ÆSourisÆ, price: 25 },
+3 { name: ÆClavierÆ, price: 80 },
+4 { name: ÆEcranÆ, price: 250 },
+5 { name: ÆTapisÆ, price: 15 }
+6 ];
+7
+8 const affordableProducts = products.filter(product => product.price < 50);
+9 // affordableProducts ne contient que la souris et le tapis
+10
+Listing 6 û Utilisation de .filter()
+ù .reduce():Appliqueunefonction"rΘductrice"αchaqueΘlΘmentdutableaupourlerΘduire
+α une seule valeur (par exemple, une somme, un objet, une chaεne).
+1 const amounts = [10, 25, 150, 65];
+2 const total = amounts.reduce((accumulator, currentValue) => accumulator +
+currentValue, 0);
+3 // total vaut 250 (0+10 -> 10+25 -> 35+150 -> 185+65)
+4
+Listing 7 û Utilisation de .reduce()
+ù Les Promesses (Promises) et la syntaxe async/await
+LecodeasynchroneestcrucialpourlesapplicationswebquidoiventattendredesrΘponsesrΘseau
+(appels API) sans bloquer lÆinterface utilisateur. Les Promises sont des objets qui reprΘsentent
+la complΘtion (ou lÆΘchec) future dÆune opΘration asynchrone.
+La syntaxe async/await est une surcouche qui rend le code asynchrone beaucoup plus lisible, en
+lui donnant lÆapparence dÆun code synchrone.
+1 // Simulation dÆune fonction qui recupere des donnees utilisateur apres 1
+seconde
+2 function fetchUserData(userId) {
+3 return new Promise((resolve, reject) => {
+4 setTimeout(() => {
+5 if (userId === 1) {
+6 resolve({ id: 1, name: ÆJohn DoeÆ, email: Æjohn.doe@example.comÆ });
+7 } else {
+8 reject(new Error(ÆUtilisateur non trouveÆ));
+9 }
+10 }, 1000);
+11 });
+12 }
+13
+14 // Fonction asynchrone qui utilise ÆawaitÆ pour attendre la reponse
+15 async function displayUserData() {
+16 try {
+17 console.log(ÆRecuperation des donnees...Æ);
+18 const user = await fetchUserData(1); // Met en pause lÆexecution de CETTE
+fonction
+19 console.log(æNom: ${user.name}, Email: ${user.email}æ);
+20 } catch (error) {
+21 console.error(æErreur: ${error.message}æ);
+22 }
+23 }
+24
+25 displayUserData();
+26
+Listing 8 û GΘrer un appel API avec async/await
+5
+
+--- Page 6 ---
+Importance pour React
+Ces trois concepts sont au c£ur du dΘveloppement React moderne. Vous utiliserez les
+Template Literals pour construire des chaεnes de caractΦres, .map() quotidiennement
+pour afficher des listes, et async/await pour interagir avec des serveurs externes afin de
+rΘcupΘrer ou dÆenvoyer des donnΘes. Une maεtrise solide de ces outils est indispensable.
+3 La Manipulation du DOM : LÆAncienne vs. la Nouvelle Approche
+3.1 Le DOM : Document Object Model
+Le DOM est une interface de programmation qui reprΘsente un document HTML ou XML sous
+forme dÆune arborescence. Chaque n£ud de lÆarbre est un objet reprΘsentant une partie du document
+(un ΘlΘment, un attribut, du texte). JavaScript peut lire et modifier cet arbre.
+3.2 LÆApproche ImpΘrative (JavaScript "Vanilla")
+CÆest la maniΦre "traditionnelle" dÆinteragir avec le DOM. Vous donnez des instructions Θtape par
+Θtape sur la faτon de modifier lÆinterface.
+1 <!DOCTYPE html>
+2 <html>
+3 <body>
+4 <div id="root"></div>
+5 <script src="script.js"></script>
+6 </body>
+7 </html>
+Listing 9 û Un simple fichier HTML
+1 const root = document.getElementById(ÆrootÆ);
+2 const fruits = [ÆFraiseÆ, ÆBananeÆ, ÆOrangeÆ];
+3
+4 const title = document.createElement(Æh1Æ);
+5 title.textContent = ÆListe de fruitsÆ;
+6 root.appendChild(title);
+7
+8 const ul = document.createElement(ÆulÆ);
+9 fruits.forEach(fruit => {
+10 const li = document.createElement(ÆliÆ);
+11 li.textContent = fruit;
+12 ul.appendChild(li);
+13 });
+14
+15 root.appendChild(ul);
+Listing 10 û script.js : CrΘation dÆune liste de maniΦre impΘrative
+Les Limites de lÆApproche ImpΘrative
+Ce code fonctionne, mais il devient rapidement ingΘrable sur des applications complexes.
+ù Verbeux et complexe : Le code est long pour une tΓche simple.
+ù Gestion de lÆΘtat difficile : Comment mettre α jour la liste si un fruit est ajoutΘ? Il
+faut Θcrire du code pour trouver le bon æ<li>æ α supprimer ou α ajouter, ce qui est source
+dÆerreurs.
+ù ProblΦmes de performance : Chaque manipulation directe du DOM est une opΘration
+co√teuse pour le navigateur.
+6
+
+--- Page 7 ---
+3.3 LÆApproche DΘclarative : La Promesse de React
+Avec React, vous ne manipulez plus le DOM directement. Vous dΘcrivez lÆinterface utilisateur que
+vous souhaitez obtenir pour un Θtat de donnΘes donnΘ, et React se charge de mettre α jour le DOM
+pour vous de maniΦre optimisΘe.
+1 function FruitList() {
+2 const fruits = [ÆFraiseÆ, ÆBananeÆ, ÆOrangeÆ];
+3
+4 return (
+5 <div>
+6 <h1>Liste de fruits</h1>
+7 <ul>
+8 {fruits.map(fruit => (
+9 <li key={fruit}>{fruit}</li>
+10 ))}
+11 </ul>
+12 </div>
+13 );
+14 }
+Listing 11 û ╔quivalent conceptuel en React (JSX)
+Ce code est plus lisible, plus concis et plus facile α maintenir. La complexitΘ de la manipulation du
+DOM est abstraite par React. CÆest le problΦme fondamental que React vient rΘsoudre.
+7
+
+--- Page 8 ---
+4 Mise en Place de lÆEnvironnement (Travaux Pratiques)
+4.1 Outils Indispensables
+Pour suivre cette formation, vous devez installer les outils suivants.
+4.1.1 Node.js et npm
+ù QuÆest-ce que cÆest? Node.js est un environnement qui permet dÆexΘcuter du JavaScript en
+dehors dÆun navigateur. npm (Node Package Manager) est le gestionnaire de paquets qui vient
+avec Node.js. Il permet dÆinstaller des bibliothΦques comme React.
+ù Action : TΘlΘchargez et installez la version LTS (Long-Term Support) depuis https://nodejs.
+org/.
+ù VΘrification : Ouvrez un terminal et tapez les commandes suivantes. Vous devriez voir des
+numΘros de version sÆafficher.
+1 node -v
+2 npm -v
+3
+4.1.2 Un ╔diteur de Code : Visual Studio Code
+ù QuÆest-ce que cÆest? Un Θditeur de code moderne, gratuit et trΦs populaire, avec un excellent
+support pour JavaScript et React.
+ù Action : TΘlΘchargez et installez VS Code depuis https://code.visualstudio.com/.
+4.1.3 Extensions VS Code RecommandΘes
+Une fois VS Code installΘ, ouvrez le panneau des extensions (Ctrl+Shift+X) et installez :
+ù ESLint : Pour analyser votre code et dΘtecter les erreurs potentielles et les problΦmes de style.
+ù Prettier - Code formatter : Pour formater automatiquement votre code et garantir un style
+cohΘrent.
+ù Simple React Snippets : Pour gΘnΘrer rapidement des squelettes de code React.
+4.2 VΘrification Finale de lÆInstallation
+Suivez ces Θtapes pour confirmer que tout est prΩt.
+1. CrΘez un nouveau dossier sur votre ordinateur, par exemple æverif-envæ.
+2. Ouvrez ce dossier dans VS Code.
+3. Ouvrez le terminal intΘgrΘ de VS Code (æCtrl+æ ou æView > Terminalæ).
+4. Tapez la commande ænpm init -yæ. Cela crΘe un fichier æpackage.jsonæ qui dΘcrira votre projet.
+5. CrΘez un fichier æindex.jsæ et ajoutez-y la ligne suivante :
+1 console.log(ÆMon environnement est pret pour React ! Hello ISITCOM !Æ);
+2
+6. Dans le terminal, exΘcutez le fichier avec la commande :
+1 node index.js
+2
+7. Si le message sÆaffiche dans votre terminal, votre environnement est fonctionnel.
+8
+
+--- Page 9 ---
+5 Travail PrΘparatoire pour la SΘance 1
+ACTION REQUISE avant la SΘance 1
+ù Assurez-vous que tous les outils listΘs dans la section 3 sont installΘs et fonctionnels
+sur votre machine.
+ù Revoyez attentivement les concepts JavaScript ES6+ prΘsentΘs. Si lÆun dÆeux nÆest
+pas clair, faites des recherches complΘmentaires (MDN Web Docs est une excellente res-
+source).
+ù Il nÆy a pas de compte rendu α soumettre pour cette SΘance 0, mais il est
+de votre responsabilitΘ dÆarriver α la SΘance 1 avec un environnement de dΘveloppement
+parfaitement opΘrationnel. Ne pas le faire vous pΘnalisera fortement pour la suite des
+travaux pratiques.
+9
+
+================================================================================
+FILE: React_js_IsitCom routers.pdf
+================================================================================
+
+--- Page 1 ---
+React JS 1 Master SWM ISITCOM
+SΘance 5 : Navigation Multi-Pages et Gestion AvancΘe des DonnΘes
+Dr Abdelweheb GUEDDES
+15 novembre 2025
+
+--- Page 2 ---
+Table des matiΦres
+1 Introduction : Vers des Applications RΘelles 3
+2 Partie 1 : ThΘorie (1h30) 3
+2.1 React Router : Navigation C⌠tΘ Client . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.1 Le ProblΦme : Applications Single-Page . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.2 La Solution : React Router . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.1.3 Exemple de Base . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.4 Routes avec ParamΦtres Dynamiques . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.1.5 Navigation Programmatique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 RTK Query : La RΘvolution des Appels API . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2.1 Le ProblΦme : La ComplexitΘ des Appels API . . . . . . . . . . . . . . . . . . . 5
+2.2.2 La Solution : RTK Query . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2.3 Les Concepts ClΘs de RTK Query . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2.4 Queries vs Mutations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.3 Comparaison : Avant/AprΦs RTK Query . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3 Partie 2 : Travaux Pratiques (TP) (2h) 8
+3.1 ╔tape 1 : Installation des DΘpendances . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2 ╔tape 2 : CrΘer lÆAPI Service avec RTK Query . . . . . . . . . . . . . . . . . . . . . . 8
+3.3 ╔tape 3 : Configurer le Store Redux avec lÆAPI . . . . . . . . . . . . . . . . . . . . . . 9
+3.4 ╔tape 4 : CrΘer la Structure de Routing . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.5 ╔tape 5 : CrΘer la Page dÆAccueil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.6 ╔tape 6 : Mettre α Jour CharacterCard avec Navigation . . . . . . . . . . . . . . . . . 11
+3.7 ╔tape 7 : CrΘer la Page de DΘtails . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.8 ╔tape 8 : CrΘer la Page des Favoris . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.9 ╔tape 9 : Configurer les Routes dans App.jsx . . . . . . . . . . . . . . . . . . . . . . . 15
+3.10 ╔tape 10 : CrΘer la Page 404 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.11 Travail α Faire par lÆ╔tudiant (Pour le Compte Rendu) . . . . . . . . . . . . . . . . . . 16
+3.11.1 Exercice 1 : Ajouter une FonctionnalitΘ de Recherche . . . . . . . . . . . . . . . 16
+3.11.2 Exercice 2 : Optimiser avec le Prefetching . . . . . . . . . . . . . . . . . . . . . 16
+3.11.3 Exercice 3 : Analyser le Cache avec Redux DevTools . . . . . . . . . . . . . . . 16
+3.11.4 Exercice 4 : Ajouter la Persistance des Favoris . . . . . . . . . . . . . . . . . . . 17
+4 Bonus : FonctionnalitΘs AvancΘes 17
+4.1 Polling : Rafraεchissement Automatique . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.2 Retry : Nouvelle Tentative Automatique . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.3 Skip : RequΩte Conditionnelle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5 Conclusion 18
+2
+
+--- Page 3 ---
+1 Introduction : Vers des Applications RΘelles
+JusquÆα prΘsent, nous avons construit une application Rick & Morty qui fonctionne sur une seule
+page. Dans le monde rΘel, les applications modernes sont organisΘes en plusieurs pages (ou vues)
+avec une navigation fluide, et communiquent intensivement avec des APIs externes.
+Cette sΘance aborde deux piliers essentiels des applications React professionnelles :
+1. React Router : Pour crΘer une application multi-pages avec navigation c⌠tΘ client
+2. RTK Query : Pour gΘrer les appels API de maniΦre optimale avec cache, invalidation automa-
+tique, et gestion des Θtats de chargement
+Objectifs de la SΘance 5
+1. Maεtriserle routing avec React Router(navigation, paramΦtresdÆURL, routes imbriquΘes)
+2. Comprendre RTK Query et son intΘgration avec Redux Toolkit
+3. GΘrer le cache, la synchronisation et lÆinvalidation des donnΘes
+4. Construire une architecture scalable pour les appels API
+2 Partie 1 : ThΘorie (1h30)
+2.1 React Router : Navigation C⌠tΘ Client
+2.1.1 Le ProblΦme : Applications Single-Page
+Par dΘfaut, React crΘe des Single Page Applications (SPA) : toute lÆapplication vit dans une
+seule page HTML. Quand lÆutilisateur clique sur un lien, JavaScript change le contenu sans recharger
+la page.
+Les avantages :
+ù Navigation instantanΘe (pas de rechargement)
+ù Meilleure expΘrience utilisateur
+ù Moins de charge serveur
+Le dΘfi :
+ù Comment gΘrer diffΘrentes "pages"?
+ù Comment synchroniser lÆURL avec le contenu affichΘ?
+ù Comment permettre le partage dÆURL et les boutons prΘcΘdent/suivant du navigateur?
+2.1.2 La Solution : React Router
+React Router est la bibliothΦque standard pour gΘrer la navigation dans React. Elle synchronise
+lÆURL du navigateur avec les composants α afficher.
+Les Concepts Fondamentaux
+<BrowserRouter> Lecomposantracinequiactivelerouting.Ildoitenveloppertoutevotreapplication.
+<Routes> Conteneur pour dΘfinir vos routes. Il examine toutes les routes enfants et affiche celle qui
+correspond α lÆURL actuelle.
+<Route> DΘfinit une correspondance entre un chemin dÆURL et un composant α afficher.
+<Link> Remplace la balise <a> pour la navigation sans rechargement de page.
+<NavLink> Comme <Link>, mais peut avoir un style diffΘrent quand il est actif.
+useParams() Hook pour rΘcupΘrer les paramΦtres dynamiques de lÆURL (ex : /character/:id).
+useNavigate() Hook pour naviguer programmatiquement (dans du code JavaScript).
+3
+
+--- Page 4 ---
+2.1.3 Exemple de Base
+1 import { BrowserRouter, Routes, Route, Link } from Æreact-router-domÆ;
+2
+3 function App() {
+4 return (
+5 <BrowserRouter>
+6 <nav>
+7 <Link to="/">Accueil</Link>
+8 <Link to="/about">└ propos</Link>
+9 </nav>
+10
+11 <Routes>
+12 <Route path="/" element={<HomePage />} />
+13 <Route path="/about" element={<AboutPage />} />
+14 <Route path="*" element={<NotFoundPage />} />
+15 </Routes>
+16 </BrowserRouter>
+17 );
+18 }
+Listing 1 û Structure de routing simple
+2.1.4 Routes avec ParamΦtres Dynamiques
+Pour crΘer des pages de dΘtails (ex : profil dÆun utilisateur, dΘtails dÆun produit) :
+1 import { useParams } from Æreact-router-domÆ;
+2
+3 // Definition de la route
+4 <Route path="/character/:id" element={<CharacterDetail />} />
+5
+6 // Composant qui utilise le parametre
+7 function CharacterDetail() {
+8 const { id } = useParams(); // Recupere lÆID depuis lÆURL
+9
+10 return <h1>DΘtails du personnage #{id}</h1>;
+11 }
+12
+13 // Navigation vers cette route
+14 <Link to="/character/42">Voir personnage 42</Link>
+Listing 2 û Routes dynamiques avec paramΦtres
+2.1.5 Navigation Programmatique
+Parfois, vous devez naviguer dans votre code (aprΦs une soumission de formulaire, une connexion,
+etc.) :
+1 import { useNavigate } from Æreact-router-domÆ;
+2
+3 function LoginForm() {
+4 const navigate = useNavigate();
+5
+6 const handleLogin = async (credentials) => {
+7 const success = await loginUser(credentials);
+8
+9 if (success) {
+10 navigate(Æ/dashboardÆ); // Rediriger vers le tableau de bord
+11 }
+12 };
+13
+14 return <form onSubmit={handleLogin}>...</form>;
+15 }
+Listing 3 û Navigation avec useNavigate
+4
+
+--- Page 5 ---
+2.2 RTK Query : La RΘvolution des Appels API
+2.2.1 Le ProblΦme : La ComplexitΘ des Appels API
+GΘrer des appels API dans React nΘcessite traditionnellement beaucoup de code rΘpΘtitif :
+1 function CharactersList() {
+2 const [characters, setCharacters] = useState([]);
+3 const [loading, setLoading] = useState(false);
+4 const [error, setError] = useState(null);
+5
+6 useEffect(() => {
+7 setLoading(true);
+8 fetch(Æhttps://rickandmortyapi.com/api/characterÆ)
+9 .then(res => res.json())
+10 .then(data => {
+11 setCharacters(data.results);
+12 setLoading(false);
+13 })
+14 .catch(err => {
+15 setError(err.message);
+16 setLoading(false);
+17 });
+18 }, []);
+19
+20 // ... gestion de lÆaffichage
+21 }
+Listing 4 û Approche manuelle avec useState et useEffect
+Les problΦmes de cette approche :
+ù Beaucoup de code rΘpΘtitif (boilerplate)
+ù Pas de cache : chaque montage du composant refait lÆappel
+ù Pas de synchronisation : si deux composants affichent les mΩmes donnΘes, deux appels sont faits
+ù Gestion manuelle du loading et des erreurs
+ù Pas dÆinvalidation automatique aprΦs une mutation
+2.2.2 La Solution : RTK Query
+RTK Query est un outil puissant inclus dans Redux Toolkit qui rΘsout tous ces problΦmes. CÆest
+comme avoir un "gestionnaire intelligent dÆAPI" qui :
+ù Cache automatiquement les rΘsultats
+ù Partage les donnΘes entre tous les composants
+ù GΦre automatiquement les Θtats de chargement et dÆerreur
+ù Rafraεchit automatiquement les donnΘes quand nΘcessaire
+ù DΘduplique les requΩtes identiques
+2.2.3 Les Concepts ClΘs de RTK Query
+LÆAPI Service CÆest un objet qui dΘfinit tous vos endpoints (points dÆaccΦs α votre API) :
+1 import { createApi, fetchBaseQuery } from Æ@reduxjs/toolkit/query/reactÆ;
+2
+3 export const rickAndMortyApi = createApi({
+4 reducerPath: ÆrickAndMortyApiÆ,
+5 baseQuery: fetchBaseQuery({
+6 baseUrl: Æhttps://rickandmortyapi.com/apiÆ
+7 }),
+8 endpoints: (builder) => ({
+9 // Endpoint pour recuperer tous les personnages
+10 getCharacters: builder.query({
+5
+
+--- Page 6 ---
+11 query: () => Æ/characterÆ,
+12 }),
+13
+14 // Endpoint pour recuperer un personnage par ID
+15 getCharacterById: builder.query({
+16 query: (id) => æ/character/${id}æ,
+17 }),
+18 }),
+19 });
+20
+21 // RTK Query genere automatiquement des hooks
+22 export const {
+23 useGetCharactersQuery,
+24 useGetCharacterByIdQuery
+25 } = rickAndMortyApi;
+Listing 5 û CrΘation dÆun API service
+Les Hooks GΘnΘrΘs Automatiquement Pour chaque endpoint, RTK Query gΘnΦre un hook qui
+retourne :
+data Les donnΘes rΘcupΘrΘes (undefined au dΘpart)
+isLoading true pendant le premier chargement
+isFetching true pendant nÆimporte quel chargement (y compris rafraεchissement)
+isSuccess true si la requΩte a rΘussi
+isError true en cas dÆerreur
+error LÆobjet dÆerreur si applicable
+refetch Fonction pour relancer manuellement la requΩte
+1 function CharactersList() {
+2 const {
+3 data,
+4 isLoading,
+5 isError,
+6 error
+7 } = useGetCharactersQuery();
+8
+9 if (isLoading) return <p>Chargement...</p>;
+10 if (isError) return <p>Erreur : {error.message}</p>;
+11
+12 return (
+13 <div>
+14 {data.results.map(char => (
+15 <div key={char.id}>{char.name}</div>
+16 ))}
+17 </div>
+18 );
+19 }
+Listing 6 û Utilisation simple dÆun hook RTK Query
+Le Cache Automatique RTK Query cache automatiquement les rΘsultats. Si un deuxiΦme compo-
+sant demande les mΩmes donnΘes :
+ù Aucun nouvel appel rΘseau nÆest fait
+ù Les donnΘes sont immΘdiatement disponibles depuis le cache
+ù Si les donnΘes sont "pΘrimΘes", un rafraεchissement en arriΦre-plan peut Ωtre dΘclenchΘ
+6
+
+--- Page 7 ---
+Les Tags pour lÆInvalidation Les "tags" sont un systΦme qui permet dÆinvalider automatiquement
+le cache :
+1 export const tasksApi = createApi({
+2 reducerPath: ÆtasksApiÆ,
+3 baseQuery: fetchBaseQuery({ baseUrl: Æ/apiÆ }),
+4 tagTypes: [ÆTaskÆ], // Declarer les types de tags
+5 endpoints: (builder) => ({
+6 getTasks: builder.query({
+7 query: () => Æ/tasksÆ,
+8 providesTags: [ÆTaskÆ], // Cette requete fournit des "Task"
+9 }),
+10
+11 addTask: builder.mutation({
+12 query: (task) => ({
+13 url: Æ/tasksÆ,
+14 method: ÆPOSTÆ,
+15 body: task,
+16 }),
+17 invalidatesTags: [ÆTaskÆ], // Cette mutation invalide les "Task"
+18 // Resultat : apres ajout, getTasks() sera automatiquement re-execute
+19 }),
+20 }),
+21 });
+Listing 7 û Utilisation des tags pour invalidation
+2.2.4 Queries vs Mutations
+RTK Query distingue deux types dÆopΘrations :
+query Pour lire des donnΘes (GET). Mise en cache, partagΘes, rafraεchissement automatique.
+mutation Pour modifier des donnΘes (POST, PUT, DELETE). Ne sont pas mises en cache, peuvent
+invalider dÆautres queries.
+1 export const tasksApi = createApi({
+2 // ... configuration de base
+3 endpoints: (builder) => ({
+4 addTask: builder.mutation({
+5 query: (newTask) => ({
+6 url: Æ/tasksÆ,
+7 method: ÆPOSTÆ,
+8 body: newTask,
+9 }),
+10 }),
+11 }),
+12 });
+13
+14 export const { useAddTaskMutation } = tasksApi;
+15
+16 // Utilisation dans un composant
+17 function AddTaskForm() {
+18 const [addTask, { isLoading }] = useAddTaskMutation();
+19
+20 const handleSubmit = async (taskData) => {
+21 try {
+22 await addTask(taskData).unwrap();
+23 alert(ÆTΓche ajoutΘe !Æ);
+24 } catch (error) {
+25 alert(ÆErreur : Æ + error.message);
+26 }
+27 };
+28
+29 return <form onSubmit={handleSubmit}>...</form>;
+7
+
+--- Page 8 ---
+30 }
+Listing 8 û Exemple de mutation
+2.3 Comparaison : Avant/AprΦs RTK Query
+Approche Manuelle Avec RTK Query
+30-40 lignes de code par endpoint 5-10 lignes par endpoint
+Gestion manuelle de loading/error Automatique
+Pas de cache (requΩtes dupliquΘes) Cache automatique et partagΘ
+Invalidation manuelle complexe Tags dÆinvalidation automatique
+Code dispersΘ dans les composants CentralisΘ dans lÆAPI service
+Difficile α tester Facile α tester et α mocker
+Table 1 û Comparaison des approches de gestion dÆAPI
+3 Partie 2 : Travaux Pratiques (TP) (2h)
+Nous allons transformer notre application Rick & Morty en une application multi-pages avec :
+ù Une page dÆaccueil avec la liste des personnages
+ù Une page de dΘtails pour chaque personnage
+ù Une page des favoris
+ù Une navigation fluide avec React Router
+ù Gestion optimale des appels API avec RTK Query
+3.1 ╔tape 1 : Installation des DΘpendances
+1 npm install react-router-dom
+Note:RTKQueryestdΘjαinclusdans@reduxjs/toolkit,pasbesoindÆinstallationsupplΘmentaire.
+3.2 ╔tape 2 : CrΘer lÆAPI Service avec RTK Query
+CrΘez le fichier src/services/rickAndMortyApi.js :
+1 import { createApi, fetchBaseQuery } from Æ@reduxjs/toolkit/query/reactÆ;
+2
+3 export const rickAndMortyApi = createApi({
+4 reducerPath: ÆrickAndMortyApiÆ,
+5 baseQuery: fetchBaseQuery({
+6 baseUrl: Æhttps://rickandmortyapi.com/apiÆ
+7 }),
+8 tagTypes: [ÆCharacterÆ],
+9 endpoints: (builder) => ({
+10 // Recuperer tous les personnages avec pagination optionnelle
+11 getCharacters: builder.query({
+12 query: (page = 1) => æ/character?page=${page}æ,
+13 providesTags: [ÆCharacterÆ],
+14 }),
+15
+16 // Recuperer un personnage par son ID
+17 getCharacterById: builder.query({
+18 query: (id) => æ/character/${id}æ,
+19 providesTags: (result, error, id) => [{ type: ÆCharacterÆ, id }],
+20 }),
+21
+22 // Rechercher des personnages par nom
+8
+
+--- Page 9 ---
+23 searchCharacters: builder.query({
+24 query: (name) => æ/character?name=${name}æ,
+25 providesTags: [ÆCharacterÆ],
+26 }),
+27
+28 // Recuperer plusieurs personnages par leurs IDs
+29 getMultipleCharacters: builder.query({
+30 query: (ids) => æ/character/${ids.join(Æ,Æ)}æ,
+31 providesTags: [ÆCharacterÆ],
+32 }),
+33 }),
+34 });
+35
+36 // Exporter les hooks generes automatiquement
+37 export const {
+38 useGetCharactersQuery,
+39 useGetCharacterByIdQuery,
+40 useSearchCharactersQuery,
+41 useGetMultipleCharactersQuery,
+42 } = rickAndMortyApi;
+Listing 9 û Contenu de src/services/rickAndMortyApi.js
+3.3 ╔tape 3 : Configurer le Store Redux avec lÆAPI
+Mettez α jour src/store/store.js pour intΘgrer lÆAPI RTK Query :
+1 import { configureStore } from Æ@reduxjs/toolkitÆ;
+2 import { rickAndMortyApi } from Æ../services/rickAndMortyApiÆ;
+3 import favoritesReducer from Æ./favoritesSliceÆ;
+4
+5 export const store = configureStore({
+6 reducer: {
+7 // Ajouter le reducer de lÆAPI
+8 [rickAndMortyApi.reducerPath]: rickAndMortyApi.reducer,
+9
+10 // Garder le reducer des favoris
+11 favorites: favoritesReducer,
+12 },
+13 // Ajouter le middleware de lÆAPI pour activer le cache et les requetes
+14 middleware: (getDefaultMiddleware) =>
+15 getDefaultMiddleware().concat(rickAndMortyApi.middleware),
+16 });
+Listing 10 û Contenu mis α jour de src/store/store.js
+3.4 ╔tape 4 : CrΘer la Structure de Routing
+CrΘez le fichier src/components/Layout.jsx pour la structure commune :
+1 import { Outlet, NavLink } from Æreact-router-domÆ;
+2 import { useSelector } from Æreact-reduxÆ;
+3 import Æ./Layout.cssÆ;
+4
+5 function Layout() {
+6 const favoritesCount = useSelector(
+7 (state) => state.favorites.favorites.length
+8 );
+9
+10 return (
+11 <div className="app-layout">
+12 <header className="app-header">
+13 <h1> Rick & Morty Explorer</h1>
+14
+15 <nav className="main-nav">
+16 <NavLink
+9
+
+--- Page 10 ---
+17 to="/"
+18 className={({ isActive }) => isActive ? ÆactiveÆ : ÆÆ}
+19 >
+20 Accueil
+21 </NavLink>
+22
+23 <NavLink
+24 to="/favorites"
+25 className={({ isActive }) => isActive ? ÆactiveÆ : ÆÆ}
+26 >
+27 Favoris ({favoritesCount})
+28 </NavLink>
+29 </nav>
+30 </header>
+31
+32 <main className="app-main">
+33 {/* Outlet affiche le composant de la route active */}
+34 <Outlet />
+35 </main>
+36
+37 <footer className="app-footer">
+38 <p>DonnΘes fournies par lÆAPI Rick and Morty</p>
+39 </footer>
+40 </div>
+41 );
+42 }
+43
+44 export default Layout;
+Listing 11 û Contenu de src/components/Layout.jsx
+3.5 ╔tape 5 : CrΘer la Page dÆAccueil
+CrΘez src/pages/HomePage.jsx :
+1 import { useState } from ÆreactÆ;
+2 import { useGetCharactersQuery } from Æ../services/rickAndMortyApiÆ;
+3 import CharacterCard from Æ../components/CharacterCardÆ;
+4 import Æ./HomePage.cssÆ;
+5
+6 function HomePage() {
+7 const [page, setPage] = useState(1);
+8
+9 // Utiliser le hook genere par RTK Query
+10 const { data, isLoading, isError, error, isFetching } =
+11 useGetCharactersQuery(page);
+12
+13 if (isLoading) {
+14 return (
+15 <div className="loading-container">
+16 <div className="spinner"></div>
+17 <p>Chargement des personnages...</p>
+18 </div>
+19 );
+20 }
+21
+22 if (isError) {
+23 return (
+24 <div className="error-container">
+25 <h2> Erreur</h2>
+26 <p>{error.message || ÆImpossible de charger les personnagesÆ}</p>
+27 </div>
+28 );
+29 }
+30
+31 return (
+10
+
+--- Page 11 ---
+32 <div className="home-page">
+33 <div className="page-header">
+34 <h2>Tous les Personnages</h2>
+35 <p className="info-text">
+36 Page {data.info.pages ? æ${page} sur ${data.info.pages}æ : page}
+37 </p>
+38 </div>
+39
+40 {isFetching && (
+41 <div className="fetching-indicator">
+42 Mise α jour...
+43 </div>
+44 )}
+45
+46 <div className="characters-grid">
+47 {data.results.map((character) => (
+48 <CharacterCard key={character.id} character={character} />
+49 ))}
+50 </div>
+51
+52 <div className="pagination">
+53 <button
+54 onClick={() => setPage(p => Math.max(1, p - 1))}
+55 disabled={page === 1 || isFetching}
+56 >
+57 PrΘcΘdent
+58 </button>
+59
+60 <span className="page-indicator">
+61 Page {page}
+62 </span>
+63
+64 <button
+65 onClick={() => setPage(p => p + 1)}
+66 disabled={!data.info.next || isFetching}
+67 >
+68 Suivant
+69 </button>
+70 </div>
+71 </div>
+72 );
+73 }
+74
+75 export default HomePage;
+Listing 12 û Contenu de src/pages/HomePage.jsx
+Magie de RTK Query en Action
+Remarquez la simplicitΘ du code :
+ù Une seule ligne pour rΘcupΘrer les donnΘes : useGetCharactersQuery(page)
+ù Pas de useEffect, pas de useState pour les donnΘes
+ù Gestion automatique du cache : changer de page puis revenir ne refait pas lÆappel
+ù Le flag isFetching distingue le premier chargement des rafraεchissements
+3.6 ╔tape 6 : Mettre α Jour CharacterCard avec Navigation
+Mettez α jour src/components/CharacterCard.jsx :
+1 import { Link } from Æreact-router-domÆ;
+2 import { useSelector, useDispatch } from Æreact-reduxÆ;
+3 import { toggleFavorite } from Æ../store/favoritesSliceÆ;
+4 import Æ./CharacterCard.cssÆ;
+11
+
+--- Page 12 ---
+5
+6 function CharacterCard({ character }) {
+7 const dispatch = useDispatch();
+8 const favorites = useSelector((state) => state.favorites.favorites);
+9 const isFavorite = favorites.some((fav) => fav.id === character.id);
+10
+11 const handleToggleFavorite = (e) => {
+12 e.preventDefault(); // Empecher la navigation lors du clic sur le bouton
+13 dispatch(toggleFavorite(character));
+14 };
+15
+16 return (
+17 <Link to={æ/character/${character.id}æ} className="character-card-link">
+18 <div className="character-card">
+19 <img src={character.image} alt={character.name} />
+20
+21 <div className="card-content">
+22 <h3>{character.name}</h3>
+23 <p className="status">
+24 <span className={æstatus-icon ${character.status.toLowerCase()}æ}>
+25
+26 </span>
+27 {character.status} - {character.species}
+28 </p>
+29
+30 <button
+31 onClick={handleToggleFavorite}
+32 className={æbtn-favorite ${isFavorite ? ÆactiveÆ : ÆÆ}æ}
+33 >
+34 {isFavorite ? Æ Æ : Æ Æ}
+35 </button>
+36 </div>
+37 </div>
+38 </Link>
+39 );
+40 }
+41
+42 export default CharacterCard;
+Listing 13 û Version avec navigation de CharacterCard.jsx
+3.7 ╔tape 7 : CrΘer la Page de DΘtails
+CrΘez src/pages/CharacterDetailPage.jsx :
+1 import { useParams, useNavigate } from Æreact-router-domÆ;
+2 import { useGetCharacterByIdQuery } from Æ../services/rickAndMortyApiÆ;
+3 import { useSelector, useDispatch } from Æreact-reduxÆ;
+4 import { toggleFavorite } from Æ../store/favoritesSliceÆ;
+5 import Æ./CharacterDetailPage.cssÆ;
+6
+7 function CharacterDetailPage() {
+8 const { id } = useParams(); // Recuperer lÆID depuis lÆURL
+9 const navigate = useNavigate();
+10 const dispatch = useDispatch();
+11
+12 // Appel API pour recuperer les details du personnage
+13 const { data: character, isLoading, isError } =
+14 useGetCharacterByIdQuery(id);
+15
+16 const favorites = useSelector((state) => state.favorites.favorites);
+17 const isFavorite = character &&
+18 favorites.some((fav) => fav.id === character.id);
+19
+20 if (isLoading) {
+21 return (
+12
+
+--- Page 13 ---
+22 <div className="loading-container">
+23 <div className="spinner"></div>
+24 <p>Chargement du personnage...</p>
+25 </div>
+26 );
+27 }
+28
+29 if (isError || !character) {
+30 return (
+31 <div className="error-container">
+32 <h2> Personnage introuvable</h2>
+33 <button onClick={() => navigate(Æ/Æ)}>
+34 Retour α lÆaccueil
+35 </button>
+36 </div>
+37 );
+38 }
+39
+40 return (
+41 <div className="character-detail-page">
+42 <button className="btn-back" onClick={() => navigate(-1)}>
+43 Retour
+44 </button>
+45
+46 <div className="detail-container">
+47 <div className="detail-header">
+48 <img
+49 src={character.image}
+50 alt={character.name}
+51 className="detail-image"
+52 />
+53
+54 <div className="detail-info">
+55 <h1>{character.name}</h1>
+56
+57 <p className="status-badge">
+58 <span className={æstatus-icon ${character.status.toLowerCase()}æ}>
+59
+60 </span>
+61 {character.status}
+62 </p>
+63
+64 <button
+65 onClick={() => dispatch(toggleFavorite(character))}
+66 className={æbtn-favorite-large ${isFavorite ? ÆactiveÆ : ÆÆ}æ}
+67 >
+68 {isFavorite ? Æ Retirer des favorisÆ : Æ Ajouter aux
+favorisÆ}
+69 </button>
+70 </div>
+71 </div>
+72
+73 <div className="detail-sections">
+74 <section className="detail-section">
+75 <h3>Informations GΘnΘrales</h3>
+76 <dl>
+77 <dt>EspΦce :</dt>
+78 <dd>{character.species}</dd>
+79
+80 <dt>Genre :</dt>
+81 <dd>{character.gender}</dd>
+82
+83 <dt>Origine :</dt>
+84 <dd>{character.origin.name}</dd>
+85
+86 <dt>DerniΦre localisation :</dt>
+13
+
+--- Page 14 ---
+87 <dd>{character.location.name}</dd>
+88 </dl>
+89 </section>
+90
+91 <section className="detail-section">
+92 <h3>Apparitions</h3>
+93 <p>
+94 Ce personnage apparaεt dans{Æ Æ}
+95 <strong>{character.episode.length}</strong>{Æ Æ}
+96 Θpisode{character.episode.length > 1 ? ÆsÆ : ÆÆ}.
+97 </p>
+98 </section>
+99 </div>
+100 </div>
+101 </div>
+102 );
+103 }
+104
+105 export default CharacterDetailPage;
+Listing 14 û Contenu de src/pages/CharacterDetailPage.jsx
+Le Pouvoir de useParams et du Cache
+useParams : RΘcupΦre les paramΦtres dynamiques de lÆURL (ici, id).
+Cache RTK Query : Si lÆutilisateur a dΘjα vu ce personnage dans la liste, les donnΘes sont
+instantanΘment disponibles depuis le cache, sans nouvel appel API!
+3.8 ╔tape 8 : CrΘer la Page des Favoris
+CrΘez src/pages/FavoritesPage.jsx :
+1 import { useSelector, useDispatch } from Æreact-reduxÆ;
+2 import { Link } from Æreact-router-domÆ;
+3 import { removeFavorite, clearFavorites } from Æ../store/favoritesSliceÆ;
+4 import Æ./FavoritesPage.cssÆ;
+5
+6 function FavoritesPage() {
+7 const dispatch = useDispatch();
+8 const favorites = useSelector((state) => state.favorites.favorites);
+9
+10 const handleClearAll = () => {
+11 if (window.confirm(ÆSupprimer tous les favoris ?Æ)) {
+12 dispatch(clearFavorites());
+13 }
+14 };
+15
+16 if (favorites.length === 0) {
+17 return (
+18 <div className="empty-favorites">
+19 <h2> Aucun Favori</h2>
+20 <p>Vous nÆavez pas encore ajoutΘ de personnages favoris.</p>
+21 <Link to="/" className="btn-primary">
+22 DΘcouvrir les personnages
+23 </Link>
+24 </div>
+25 );
+26 }
+27
+28 return (
+29 <div className="favorites-page">
+30 <div className="page-header">
+31 <h2> Mes Favoris ({favorites.length})</h2>
+32 <button onClick={handleClearAll} className="btn-danger">
+33 Tout supprimer
+14
+
+--- Page 15 ---
+34 </button>
+35 </div>
+36
+37 <div className="favorites-grid">
+38 {favorites.map((character) => (
+39 <div key={character.id} className="favorite-item">
+40 <Link to={æ/character/${character.id}æ}>
+41 <img src={character.image} alt={character.name} />
+42 <h3>{character.name}</h3>
+43 <p>{character.species}</p>
+44 </Link>
+45
+46 <button
+47 onClick={() => dispatch(removeFavorite(character.id))}
+48 className="btn-remove"
+49 >
+50 Retirer
+51 </button>
+52 </div>
+53 ))}
+54 </div>
+55 </div>
+56 );
+57 }
+58
+59 export default FavoritesPage;
+Listing 15 û Contenu de src/pages/FavoritesPage.jsx
+3.9 ╔tape 9 : Configurer les Routes dans App.jsx
+Mettez α jour src/App.jsx :
+1 import { BrowserRouter, Routes, Route } from Æreact-router-domÆ;
+2 import Layout from Æ./components/LayoutÆ;
+3 import HomePage from Æ./pages/HomePageÆ;
+4 import CharacterDetailPage from Æ./pages/CharacterDetailPageÆ;
+5 import FavoritesPage from Æ./pages/FavoritesPageÆ;
+6 import NotFoundPage from Æ./pages/NotFoundPageÆ;
+7
+8 function App() {
+9 return (
+10 <BrowserRouter>
+11 <Routes>
+12 {/* Route parente avec Layout */}
+13 <Route path="/" element={<Layout />}>
+14 {/* Routes enfants */}
+15 <Route index element={<HomePage />} />
+16 <Route path="character/:id" element={<CharacterDetailPage />} />
+17 <Route path="favorites" element={<FavoritesPage />} />
+18 <Route path="*" element={<NotFoundPage />} />
+19 </Route>
+20 </Routes>
+21 </BrowserRouter>
+22 );
+23 }
+24
+25 export default App;
+Listing 16 û Configuration finale de App.jsx
+3.10 ╔tape 10 : CrΘer la Page 404
+CrΘez src/pages/NotFoundPage.jsx :
+15
+
+--- Page 16 ---
+1 import { Link } from Æreact-router-domÆ;
+2 import Æ./NotFoundPage.cssÆ;
+3
+4 function NotFoundPage() {
+5 return (
+6 <div className="not-found-page">
+7 <h1>404</h1>
+8 <h2> Dimension Inconnue</h2>
+9 <p>
+10 Cette page nÆexiste pas dans cette dimension.
+11 Peut-Ωtre existe-t-elle dans une autre ?
+12 </p>
+13 <Link to="/" className="btn-primary">
+14 Retour au portail principal
+15 </Link>
+16 </div>
+17 );
+18 }
+19
+20 export default NotFoundPage;
+Listing 17 û Contenu de src/pages/NotFoundPage.jsx
+3.11 Travail α Faire par lÆ╔tudiant (Pour le Compte Rendu)
+3.11.1 Exercice 1 : Ajouter une FonctionnalitΘ de Recherche
+CrΘez une nouvelle page /search avec :
+1. Un champ de recherche pour filtrer les personnages par nom
+2. Utiliser le hook useSearchCharactersQuery
+3. GΘrer le cas o∙ aucun rΘsultat nÆest trouvΘ
+4. Ajouter un lien de navigation vers cette page dans le Layout
+Indice : Utilisez un Θtat local pour le terme de recherche et ne lancez la requΩte que quand
+lÆutilisateur a tapΘ au moins 3 caractΦres.
+3.11.2 Exercice 2 : Optimiser avec le Prefetching
+RTK Query permet de "prΘ-charger" des donnΘes avant que lÆutilisateur ne navigue. Modifiez
+CharacterCard pour prΘ-charger les dΘtails du personnage au survol :
+1 import { rickAndMortyApi } from Æ../services/rickAndMortyApiÆ;
+2
+3 function CharacterCard({ character }) {
+4 const [prefetchCharacter] = rickAndMortyApi.usePrefetch(ÆgetCharacterByIdÆ);
+5
+6 return (
+7 <Link
+8 to={æ/character/${character.id}æ}
+9 onMouseEnter={() => prefetchCharacter(character.id)}
+10 >
+11 {/* ... contenu */}
+12 </Link>
+13 );
+14 }
+Testez et documentez la diffΘrence de vitesse de chargement.
+3.11.3 Exercice 3 : Analyser le Cache avec Redux DevTools
+1. Installez Redux DevTools dans votre navigateur
+2. Naviguez dans lÆapplication et observez lÆΘtat rickAndMortyApi
+16
+
+--- Page 17 ---
+3. Documentez :
+ù Comment les donnΘes sont stockΘes dans le cache
+ù Combien de temps elles y restent
+ù Quand elles sont invalidΘes
+3.11.4 Exercice 4 : Ajouter la Persistance des Favoris
+IntΘgrez redux-persist (vu en SΘance 4) pour que les favoris persistent mΩme aprΦs rechargement
+de la page. Documentez les Θtapes de configuration.
+Question de RΘflexion Finale
+Question 1 : Comparez lÆapproche "manuelle" (useState + useEffect) et RTK Query. Pour
+quel type de projet privilΘgieriez-vous chacune?
+Question 2 : RTK Query gΦre automatiquement le cache. Quels sont les avantages et les
+inconvΘnients potentiels dÆun cache automatique dans une application en temps rΘel (ex : chat,
+tableau de bord financier)?
+Question 3 : Proposez une architecture pour une application e-commerce complΦte utilisant
+React Router + RTK Query. Listez les routes principales et les endpoints API nΘcessaires.
+4 Bonus : FonctionnalitΘs AvancΘes
+4.1 Polling : Rafraεchissement Automatique
+Pour rafraεchir automatiquement des donnΘes toutes les X secondes :
+1 const { data } = useGetCharactersQuery(page, {
+2 pollingInterval: 30000, // Rafraichir toutes les 30 secondes
+3 });
+Listing 18 û Polling avec RTK Query
+4.2 Retry : Nouvelle Tentative Automatique
+1 const { data } = useGetCharactersQuery(page, {
+2 retry: 3, // Reessayer 3 fois en cas dÆechec
+3 retryDelay: 1000, // Attendre 1 seconde entre chaque tentative
+4 });
+Listing 19 û Configuration des tentatives
+4.3 Skip : RequΩte Conditionnelle
+1 function UserProfile({ userId }) {
+2 const { data } = useGetUserQuery(userId, {
+3 skip: !userId, // Ne pas faire lÆappel si userId est null/undefined
+4 });
+5
+6 // ...
+7 }
+Listing 20 û Ne lancer une requΩte que si une condition est remplie
+17
+
+--- Page 18 ---
+5 Conclusion
+Dans cette sΘance, nous avons appris α :
+1. CrΘer une architecture multi-pages avec React Router
+2. GΘrer la navigation avec des liens et programmatiquement
+3. Utiliser les paramΦtres dÆURL pour les pages dynamiques
+4. Simplifier drastiquement les appels API avec RTK Query
+5. BΘnΘficier du cache automatique et du partage de donnΘes
+6. GΘrer ΘlΘgamment le chargement et les erreurs
+Points clΘs α retenir :
+ù React Router synchronise lÆURL avec vos composants
+ù RTK Query rΘduit le code boilerplate de 70-80%
+ù Le cache automatique amΘliore drastiquement les performances
+ù LÆinvalidation par tags garantit la fraεcheur des donnΘes
+ù Cette architecture est scalable pour de grandes applications
+18
